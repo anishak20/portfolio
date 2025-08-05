@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Anisha Khatri</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Anisha Khatri</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Study of age, metallicity and extra-tidal region of NGC 4147</title>
+      <link>http://localhost:1313/research/ngc4147/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/ngc4147/</guid>
+      <description>Estimating the age, metallicity and extra-tidal candidates of globular cluster NGC 4147 using data from Gaia EDR3</description>
+    </item>
+    <item>
+      <title>Local galaxies as time machines: Navigating biases in studying Cosmic Evolution</title>
+      <link>http://localhost:1313/research/iastro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/iastro/</guid>
+      <description>Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.</description>
+    </item>
+    <item>
+      <title>Neutron star as a signal for quark-gluon plasma formation</title>
+      <link>http://localhost:1313/research/thesis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/thesis/</guid>
+      <description>Master&amp;#39;s Thesis</description>
+    </item>
+    <item>
+      <title>Flavor Physics: Precision Measurements of CKM Matrix elements</title>
+      <link>http://localhost:1313/research/reyes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/reyes/</guid>
+      <description>To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.</description>
+    </item>
+    <item>
+      <title>Spectral lag in gamma-ray bursts</title>
+      <link>http://localhost:1313/projects/grbs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/grbs/</guid>
+      <description>Estimating the spectral lag in gamma ray bursts to understand its emission mechanism</description>
+    </item>
+    <item>
+      <title>Monte Carlo simulations of 2D Ising model</title>
+      <link>http://localhost:1313/projects/isingmodel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/isingmodel/</guid>
+      <description>Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about-me/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about-me/</guid>
+      <description>&lt;!-- Typewriter animation --&gt;
+&lt;div class=&#34;typewriter-container&#34;&gt;
+  &lt;span id=&#34;typewriter-text&#34; class=&#34;typewriter-text&#34;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;!-- Image + Text section --&gt;
+&lt;div style=&#34;display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; margin-top: 2rem;&#34;&gt;
+  &lt;!-- Left: Photo --&gt;
+  &lt;div style=&#34;flex: 1 1 250px;&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/home/anisha3.jpeg&#34; alt=&#34;Anisha Khatri&#34; style=&#34;max-width: 300px; width: 100%;&#34;&gt;
+  &lt;/div&gt;
+  &lt;!-- Right: Text that flows *beside* the image --&gt;
+  &lt;div style=&#34;flex: 1 1 300px; color: white; font-size: 0.9em;&#34;&gt;
+    &lt;p&gt;
+      I have completed my Master’s degree in Physics from 
+      &lt;a href=&#34;https://physics.du.ac.in/&#34; target=&#34;_blank&#34;&gt;University of Delhi&lt;/a&gt;, with a specialization in Astrophysics, General Relativity, and Cosmology. &lt;br&gt; &lt;br&gt;
+      During this period, I worked as a project student in the &lt;strong&gt;Observational Astronomy Laboratory&lt;/strong&gt; of the department, where I focused on the &lt;strong&gt;photometric study of the globular cluster NGC 4147&lt;/strong&gt;. This work involved analysing an initial sample of &lt;strong&gt;2389 stars&lt;/strong&gt; to identify extra-tidal stars in the cluster by applying a selection criterion based on proper motion filtering, membership probability analysis, and the stars positions on the color–magnitude diagram. 
+    &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cv</title>
+      <link>http://localhost:1313/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>&lt;p&gt;
+  &lt;a href=&#34;https://drive.google.com/file/d/1o7gG5urDyEkaxTL19-S_QMUcCkfQmKZK/view?usp=sharing&#34; target=&#34;_blank&#34;&gt;
+    Download my CV
+  &lt;/a&gt;
+  in PDF format.
+&lt;/p&gt;
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;June 2025:&lt;/strong&gt; Master of Science in Physics, University of Delhi &lt;br&gt;
+&lt;strong&gt;Specialisation:&lt;/strong&gt; Astrophysics, General Theory of Relativity and Cosmology &lt;br&gt;
+&lt;strong&gt;Dissertation:&lt;/strong&gt; Neutron star as a signal for quark-gluon plasma formation &lt;br&gt;
+&lt;strong&gt;Supervisor:&lt;/strong&gt; &lt;a href=&#34;https://www.researchgate.net/profile/S-Singh-19&#34; target=&#34;_blank&#34;&gt; Prof. S. Somorendro Singh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;June 2023:&lt;/strong&gt; Bachelor of Science (honors) in Physics, University of Delhi&lt;br&gt;
+&lt;strong&gt;Relevant Coursework&lt;/strong&gt;: Linear Algebra, Differential Equations, Numerical Methods, Advanced Mathematical Physics, Nuclear and Particle Physics, Quantum Mechanics&lt;/p&gt;
+&lt;h2 id=&#34;talks-proceedings--posters&#34;&gt;Talks, Proceedings &amp;amp; Posters&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Talk:&lt;/strong&gt; &amp;lsquo;Spectral lags in gamma-ray bursts&amp;rsquo; at ARIES Training School in Observational Astronomy &amp;amp; Atmospheric Sciences, ARIES Nainital, India (May 2025)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Talk:&lt;/strong&gt; &amp;lsquo;Study of age, metallicity and extra-tidal region of globular cluster NGC 4147&amp;rsquo;, Coursework (April 2025), Observational Astronomy lab, Department of Physics and Astrophysics, University of Delhi, India&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Talk:&lt;/strong&gt; &amp;lsquo;Neutron star as a signal for quark-gluon plasma formation&amp;rsquo;, Dissertation (Jan 2025), Department of Physics and Astrophysics, University of Delhi, India&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Talk:&lt;/strong&gt; &amp;lsquo;V_ub determinations from B→𝝅lvl decays&amp;rsquo;, REYES (Aug 2023), UC Berkeley, USA (Virtual)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Talk:&lt;/strong&gt; &amp;lsquo;Local galaxies as time machines: navigating biases in studying cosmic evolution&amp;rsquo;, IAstro Summer Program (July 2023), Instituto de Astrofísica e Ciências do Espaço, Portugal (Virtual)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Poster:&lt;/strong&gt; &amp;lsquo;Illuminating the mysteries of dark matter: A Bayesian expedition through galactic mass ratios&amp;rsquo;, DSKC Summer Program (July 2023), Miranda House, University of Delhi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;schools--workshops&#34;&gt;Schools &amp;amp; Workshops&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;May 2025: Aries Training School in Observational Astronomy and Atmospheric Sciences, Nainital, India&lt;/li&gt;
+&lt;li&gt;July 2024: Sagan Summer Workshop, Caltech, USA&lt;/li&gt;
+&lt;li&gt;July 2024: Astronomy Bootcamp, Nehru Planetarium, New Delhi, India&lt;/li&gt;
+&lt;li&gt;Aug 2023: Data Science Summer School, Hertie School, Data Science Lab, Berlin, Germany&lt;/li&gt;
+&lt;li&gt;Aug 2023: Remote Experience for Young Engineers and Scientists 2023, UC Berkeley, USA&lt;/li&gt;
+&lt;li&gt;July 2023: Astronomical Data Science Workshop, Spartificial, India&lt;/li&gt;
+&lt;li&gt;July 2023: IAstro Summer Program, Instituto de Astrofísica e Ciências do Espaço, Portugal&lt;/li&gt;
+&lt;li&gt;Feb 2023: Asian Winter School on Astronomy and Astrophysics, Department of Astronomical Science, Sokendai Japan&lt;/li&gt;
+&lt;li&gt;Feb 2023: Quantum Winter School, Qubit by Qubit with Microsoft Azure Quantum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;outreach--activities&#34;&gt;Outreach &amp;amp; Activities&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&amp;bull;&lt;/strong&gt; Initiated and led an electronic-waste collection drive, covering both the college campus and surrounding areas. Successfully collected &lt;strong&gt;50 kilograms&lt;/strong&gt; of e-waste and collaborated with the NGO &lt;strong&gt;SU-VIKAS&lt;/strong&gt; to ensure environmentally safe disposal practices. &lt;em&gt;(Oct 2021, New Delhi)&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

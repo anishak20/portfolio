@@ -1,0 +1,74 @@
+---
+title: "Neutron star as a signal for quark-gluon plasma formation"
+description: "Master's Thesis"
+dateString: Aug 2024- Dec 2025
+draft: false
+tags: ["Neutron stars", "QGP", "QCD", "Numerical Methods"]
+weight: 103
+cover:
+    image: "/blog/thesis/cover.png"
+---
+
+# Description
+
+**Supervisor:** **Prof. S. Somorendro Singh** (Professor, Dept. of Physics and Astrophysics, University of Delhi) 
+
+In this study, I conducted an in depth literature review of **Quantum Chromodynamics** (QCD) focusing on the quark-gluon plasma phase and the MIT Bag Model. I implemented the [paper](https://iopscience.iop.org/article/10.1086/309144) and investigated the **Equation of State** (EoS) of strange quark matter  using the Density Dependent Quark Mass (DDQM) model, an extension of the MIT Bag Model, to better understand the internal structure of neutron stars.
+
+## Density-Dependent Quark Mass Model
+
+Quark matter in the cores of neutron stars is expected to exist in the form of **quark-gluon plasma** (QGP). It is referred as strange quark matter (SQM). The quark masses are parametrized as functions of the baryon density as mentioned in [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/mass.png" style="max-width: 100%; height: auto;">
+</div>
+
+The system is in the presence of a magnetic field **B** which is directed along the z-axis. The energy of the charged particle of mass **m** and charge **q** in the presence of **B** is given by:
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/energy.png" style="max-width: 100%; height: auto;">
+</div>
+
+The expression for the thermodynamic potential follows [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/potential1.png" style="max-width: 80%; height: auto;">
+</div>
+
+> _where the second term is due to the contribution from gluons._
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/potential2.png" style="max-width: 100%; height: auto;">
+</div>
+
+Standard thermodynamic relations yield the expressions for pressure, energy density, entropy, and specific heat:
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/relations.png" style="max-width: 50%; height: auto;">
+</div>
+
+Hence, these are numerically computed for a range of temperatures at chemical potential = **300 MeV**:
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/plots.png" style="max-width: 120%; height: auto;">
+</div>
+
+The nature of the graphs indicates a continuous, smooth second-order phase transition of the matter. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This indicates that at sufficiently high densities and temperatures, neutron star matter may deconfine into a soup of quark-gluon plasma.
+
+<div style="display: flex; justify-content: center; margin: 10px 0;">
+  <img src="/blog/thesis/cs2.png" style="max-width: 60%; height: auto;">
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+
+  <a href="https://github.com/anishak20/Master-Thesis/blob/main/Thesis%20Report/Dissertation_Sem_III%20(6).pdf" target="_blank" rel="noopener" style="text-decoration: none;">
+    <button style="width: 100%; padding: 14px 24px; font-size: 16px; background-color: #007acc; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Project Report
+    </button>
+  </a>
+
+</div>
+
+<br><br>
+
+View my [Github Repository](https://github.com/anishak20/Master-Thesis/tree/main) for the full details and implementation of the work.

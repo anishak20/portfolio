@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Monte Carlo simulations of 2D Ising model | Anisha Khatri</title>
+<meta name="keywords" content="Monte Carlo, MCMC, Markov Chains, Metropolis-Hastings, Statistical Physics">
+<meta name="description" content="Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/isingmodel/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8943a90491e468f6ef8d33a5ef0a5845622d5178e663849217af60f670605c5b.css" integrity="sha256-iUOpBJHkaPbvjTOl7wpYRWItUXjmY4SSF69g9nBgXFs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/isingmodel/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/projects/isingmodel/">
+  <meta property="og:site_name" content="Anisha Khatri">
+  <meta property="og:title" content="Monte Carlo simulations of 2D Ising model">
+  <meta property="og:description" content="Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:tag" content="Monte Carlo">
+    <meta property="article:tag" content="MCMC">
+    <meta property="article:tag" content="Markov Chains">
+    <meta property="article:tag" content="Metropolis-Hastings">
+    <meta property="article:tag" content="Statistical Physics">
+    <meta property="og:image" content="http://localhost:1313/projects/isingmodel/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/projects/isingmodel/cover.png">
+<meta name="twitter:title" content="Monte Carlo simulations of 2D Ising model">
+<meta name="twitter:description" content="Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Monte Carlo simulations of 2D Ising model",
+      "item": "http://localhost:1313/projects/isingmodel/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Monte Carlo simulations of 2D Ising model",
+  "name": "Monte Carlo simulations of 2D Ising model",
+  "description": "Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.",
+  "keywords": [
+    "Monte Carlo", "MCMC", "Markov Chains", "Metropolis-Hastings", "Statistical Physics"
+  ],
+  "articleBody": "\rDescription Self-Guided Project\nThis project simulates a 2D Ising model to study the behaviour of some observables, like the magnetisation m, the specific heat C_V and the magnetic susceptibility χ . The simulation is performed using the Metropolis-Hastings algorithm, a type of Markov Chain Monte Carlo (MCMC) method.\nIsing Model The Ising model is a theoretical model in statistical physics originally developed to describe ferromagnetism. It models a system of magnetic particles arranged either as a 1D chain or a 2D lattice, with one atom or molecule located at each lattice site i.\rEach molecule or atom is assigned a magnetic moment, represented in the model by a discrete variable called a spin, denoted si, which can take on values of ±1. The two possible values indicate whether two spins si and sj are:\rParallel (aligned): si · sj = +1\rAntiparallel (opposed): si · sj = −1\rA system of two spins is considered to be in a lower-energy state when the magnetic moments are aligned. If the magnetic moments point in opposite directions, the system is in a higher-energy state. As a result, the system tends to align all magnetic moments in the same direction to minimize its total energy. When most of the spins are aligned, the collection of atoms behaves like a macroscopic magnet.\rA phase transition in the context of the Ising model refers to the transition from an ordered state to a disordered state. Above the critical temperature (Tc), a ferromagnet is in a disordered phase, which corresponds to a random distribution of spin values. Below Tc, the system becomes ordered — nearly all spins align, even in the absence of an external magnetic field H.\rWhen a cooled ferromagnet is heated back up, the net magnetization vanishes at Tc and the system transitions from the ordered to the disordered phase. This behavior characterizes a second-order phase transition, where magnetization vanishes continuously.\r2D Ising Model We consider a 2-dimensional nearest-neighbour Ising Model with:\rN2 = total number of sites on the lattice\rσk ∈ {+1, -1} = individual spin site on the lattice\rThe Hamiltonian is:\rH(σ) = - ∑ Jij σi σj - ∑i hi σi\rwhere Jij is the interaction strength and hi is the external local magnetic field.\rIn this system, a particular configuration σ has the following probability:\rP(σ) = (1/Z) × e-βH(σ)\rwhere\rZ = ∑{σ} e-βH(σ)\ris the partition function with β = 1/(kBT), and the sum is over all possible spin configurations of the system.\rFor h = 0, if the number of dimensions is larger than one, the Ising model exhibits a second-order phase transition.\rBelow a certain critical temperature, spontaneous magnetization occurs.\rFor d = 2, the transition temperature was calculated analytically by Onsager:\rTC = 2 / ln(1 + √2)\rIn our simulation, for simplicity, we choose a uniform ferromagnetic medium (i.e., Jij = J = 1) and no external field (i.e., hi = h = 0). We also fix the Boltzmann constant kB = 1.\rWith these assumptions, the Hamiltonian simplifies to:\rH(σ) = - ∑ σi σj\rFinally, we apply periodic boundary conditions, ensuring that all spins have the same number of neighbours.\rWe start with a random configuration,\rMetropolis-Hastings Algorithm The main steps for the implementation of Metropolis algorithm are:\nPrepare an initial configuration of N spins Flip the spin of a randomly chosen lattice site. Calculate the change in energy dE. If dE \u003c 0, accept the move. Otherwise accept the move with probability exp^{-dE/T}. This satisfies the detailed balance condition, ensuring a final equilibrium state. Repeat steps 2-4. Snapshots of the configuration We start with a random initial condition and then plot the instantaneous configurations, as the system coarsens to its equilibrium state.\nTime evolution of the 2D Ising model at low temperature, illustrating domain coarsening. The simulation begins with a random configuration of spins (red = +1, blue = −1) at time 𝑡=0. As time progresses, energetically favorable spin alignments form and grow. By 𝑡=1000, the system reaches near-complete magnetic order, with spins predominantly aligned, indicating a transition to a ferromagnetic phase.\nAnalysis We now proceed with the analysis of the behaviour of the different observables as functions of the temperature T and of the size of the system N. The expressions are given as:\n",
+  "wordCount" : "719",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/projects/isingmodel/cover.png","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/isingmodel/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anisha Khatri",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anisha Khatri (Alt + H)">Anisha Khatri</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about-me" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Monte Carlo simulations of 2D Ising model
+    </h1>
+    <div class="post-description">
+      Visualizing the 2D Ising model by performing Metropolis-Hastings Algorithm to study phase transitions and critical phenomena in magnetic systems.
+    </div>
+    <div class="post-meta">
+
+
+June 2024- July 2024
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/projects/isingmodel/cover.png" alt="">
+        
+</figure>
+  <div class="post-content"><!-- ### 🔗 [Colab Notebook](https://colab.research.google.com/drive/1TOw7W_WU4oltoGZfZ_0krpxmhdFR2gmb) -->
+<h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+<p><strong>Self-Guided Project</strong></p>
+<p>This project simulates a 2D Ising model to study the behaviour of some observables, like the magnetisation m, the specific heat C_V and the magnetic susceptibility χ . The simulation is performed using the Metropolis-Hastings algorithm, a type of Markov Chain Monte Carlo (MCMC) method.</p>
+<h1 id="ising-model">Ising Model<a hidden class="anchor" aria-hidden="true" href="#ising-model">#</a></h1>
+<p>
+The <strong>Ising model</strong> is a theoretical model in statistical physics originally developed to describe <strong>ferromagnetism</strong>. It models a system of magnetic particles arranged either as a <strong>1D chain</strong> or a <strong>2D lattice</strong>, with one atom or molecule located at each lattice site <em>i</em>.
+</p>
+<p>
+Each molecule or atom is assigned a <strong>magnetic moment</strong>, represented in the model by a discrete variable called a <strong>spin</strong>, denoted <strong>s<sub>i</sub></strong>, which can take on values of <strong>&plusmn;1</strong>. The two possible values indicate whether two spins <strong>s<sub>i</sub></strong> and <strong>s<sub>j</sub></strong> are:
+<ul>
+  <li><strong>Parallel (aligned):</strong> &nbsp; s<sub>i</sub> &middot; s<sub>j</sub> = +1</li>
+  <li><strong>Antiparallel (opposed):</strong> &nbsp; s<sub>i</sub> &middot; s<sub>j</sub> = −1</li>
+</ul>
+</p>
+<p>
+A system of two spins is considered to be in a <strong>lower-energy state</strong> when the magnetic moments are aligned. If the magnetic moments point in opposite directions, the system is in a <strong>higher-energy state</strong>. As a result, the system tends to align all magnetic moments in the same direction to minimize its total energy. When most of the spins are aligned, the collection of atoms behaves like a <strong>macroscopic magnet</strong>.
+</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/spins.png" style="width: 100%;">
+  </figure>
+</div>
+<br>
+<p>
+A <strong>phase transition</strong> in the context of the Ising model refers to the transition from an <strong>ordered state</strong> to a <strong>disordered state</strong>. Above the <strong>critical temperature</strong> (<strong>T<sub>c</sub></strong>), a ferromagnet is in a disordered phase, which corresponds to a random distribution of spin values. Below <strong>T<sub>c</sub></strong>, the system becomes ordered — nearly all spins align, even in the absence of an external magnetic field <strong>H</strong>.
+</p>
+<p>
+When a cooled ferromagnet is heated back up, the net magnetization vanishes at <strong>T<sub>c</sub></strong> and the system transitions from the ordered to the disordered phase. This behavior characterizes a <strong>second-order phase transition</strong>, where magnetization vanishes continuously.
+</p>
+<h1 id="2d-ising-model">2D Ising Model<a hidden class="anchor" aria-hidden="true" href="#2d-ising-model">#</a></h1>
+<p>
+We consider a 2-dimensional nearest-neighbour Ising Model with:
+</p>
+<ul>
+  <li><strong>N<sup>2</sup></strong> = total number of sites on the lattice</li>
+  <li><strong>&sigma;<sub>k</sub> &isin; {+1, -1}</strong> = individual spin site on the lattice</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/lattice.png" style="width: 50%;">
+  </figure>
+</div>
+<p>
+The Hamiltonian is:
+</p>
+<p style="text-align: center;">
+  <strong>H(<b>&sigma;</b>) = - &sum;<sub>&lt;ij&gt;</sub> J<sub>ij</sub> &sigma;<sub>i</sub> &sigma;<sub>j</sub> - &sum;<sub>i</sub> h<sub>i</sub> &sigma;<sub>i</sub></strong>
+</p>
+<p>
+where <strong>J<sub>ij</sub></strong> is the interaction strength and <strong>h<sub>i</sub></strong> is the external local magnetic field.
+</p>
+<p>
+In this system, a particular configuration <strong>&sigma;</strong> has the following probability:
+</p>
+<p style="text-align: center;">
+  <strong>P(<b>&sigma;</b>) = (1/Z) &times; e<sup>-&beta;H(<b>&sigma;</b>)</sup></strong>
+</p>
+<p>
+where
+</p>
+<p style="text-align: center;">
+  <strong>Z = &sum;<sub>{<b>&sigma;</b>}</sub> e<sup>-&beta;H(<b>&sigma;</b>)</sup></strong>
+</p>
+<p>
+is the partition function with <strong>&beta; = 1/(k<sub>B</sub>T)</strong>, and the sum is over all possible spin configurations of the system.
+</p>
+<p>
+For <strong>h = 0</strong>, if the number of dimensions is larger than one, the Ising model exhibits a second-order phase transition.
+Below a certain critical temperature, spontaneous magnetization occurs.
+For <strong>d = 2</strong>, the transition temperature was calculated analytically by <strong>Onsager</strong>:
+</p>
+<p style="text-align: center;">
+  <strong>T<sub>C</sub> = 2 / ln(1 + √2)</strong>
+</p>
+<p>
+In our simulation, for simplicity, we choose a uniform ferromagnetic medium (i.e., <strong>J<sub>ij</sub> = J = 1</strong>) and no external field (i.e., <strong>h<sub>i</sub> = h = 0</strong>). We also fix the Boltzmann constant <strong>k<sub>B</sub> = 1</strong>.
+</p>
+<p>
+With these assumptions, the Hamiltonian simplifies to:
+</p>
+<p style="text-align: center;">
+  <strong>H(<b>&sigma;</b>) = - &sum;<sub>&lt;ij&gt;</sub> &sigma;<sub>i</sub> &sigma;<sub>j</sub></strong>
+</p>
+<p>
+Finally, we apply periodic boundary conditions, ensuring that all spins have the same number of neighbours.
+</p>
+We start with a random configuration,
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image1.png" style="width: 100%;">
+  </figure>
+</div>
+<h1 id="metropolis-hastings-algorithm">Metropolis-Hastings Algorithm<a hidden class="anchor" aria-hidden="true" href="#metropolis-hastings-algorithm">#</a></h1>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image2.png" style="width: 200%;">
+  </figure>
+</div>
+<p>The main steps for the implementation of Metropolis algorithm are:</p>
+<ol>
+<li>Prepare an initial configuration of N spins</li>
+<li>Flip the spin of a randomly chosen lattice site.</li>
+<li>Calculate the change in energy dE.</li>
+<li>If dE &lt; 0, accept the move. Otherwise accept the move with probability exp^{-dE/T}. This satisfies the detailed
+balance condition, ensuring a final equilibrium state.</li>
+<li>Repeat steps 2-4.</li>
+</ol>
+<h1 id="snapshots-of-the-configuration">Snapshots of the configuration<a hidden class="anchor" aria-hidden="true" href="#snapshots-of-the-configuration">#</a></h1>
+<p>We start with a random initial condition and then plot the instantaneous configurations, as the system coarsens to its equilibrium state.</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image3.png" style="width: 200%;">
+  </figure>
+</div>
+<p>Time evolution of the 2D Ising model at low temperature, illustrating domain coarsening. The simulation begins with a random configuration of spins (red = +1, blue = −1) at time 𝑡=0. As time progresses, energetically favorable spin alignments form and grow. By 𝑡=1000, the system reaches near-complete magnetic order, with spins predominantly aligned, indicating a transition to a ferromagnetic phase.</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/ising_simulation.gif" style="width: 200%;">
+  </figure>
+</div>
+<h1 id="analysis">Analysis<a hidden class="anchor" aria-hidden="true" href="#analysis">#</a></h1>
+<p>We now proceed with the analysis of the behaviour of the different observables as functions of the temperature T and of the size of the system N. The expressions are given as:</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image4.png" style="width: 200%;">
+  </figure>
+</div
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image5.png" style="width: 200%;">
+  </figure>
+</div>
+<p>The Ising model is a paradigmatic model of statistical mechanics that allows us to observe some very interesting phenomena like the <strong>phase transition</strong>. In particular, from the plot of the magnetisation m, it is clear how, going through the critical point, the systems changes from a paramagnetic phase (with no magnetisation) to a ferromagnetic phase (in which a spontaneous magnetisation emerges). This effect is one of the simplest examples of
+the <strong>symmetry breaking</strong>.</p>
+<br>
+<h1 id="ergodicity-breaking">Ergodicity Breaking<a hidden class="anchor" aria-hidden="true" href="#ergodicity-breaking">#</a></h1>
+<br>
+<p>
+In addition to exhibiting a second-order phase transition, the Ising model is also an ideal system for studying <strong>ergodicity breaking</strong> — the transition in which the system loses its ability to explore the entire configuration space.
+</p>
+<br>
+<p>
+In our simulation, we observe that <strong>above the critical temperature</strong> (i.e., <strong>T &gt; T<sub>c</sub></strong>), the system is <strong>ergodic</strong>: it explores many different configurations <strong>{&sigma;<sub>⃗</sub>}</strong>, and the magnetization fluctuates around zero over time. However, <strong>below the critical temperature</strong> (i.e., <strong>T &lt; T<sub>c</sub></strong>), the system becomes <strong>non-ergodic</strong>, remaining trapped in one of the two ordered states. This means it explores only a <strong>limited region of phase space</strong> during the simulation.
+</p>
+<br>
+<p>
+To study this behavior, we analyze three temperature regimes:
+</p>
+<ol>
+  <li>For <strong>T &gt; T<sub>c</sub></strong>, the free energy <strong>f(m)</strong> exhibits a single minimum at <strong>m = 0</strong>, corresponding to the disordered (paramagnetic) phase.</li>
+  <li>For <strong>T = T<sub>c</sub></strong>, the free energy shows two coinciding minima at <strong>m = 0</strong>, indicating criticality and maximal susceptibility to fluctuations.</li>
+  <li>For <strong>T &lt; T<sub>c</sub></strong>, the free energy develops a double-well structure with minima at <strong>m = &plusmn;m<sup>*</sup></strong>, indicating spontaneous symmetry breaking and ergodicity breaking.</li>
+</ol>
+<p>
+The critical temperature for the 2D Ising model is approximately <strong>T<sub>c</sub> &asymp; 2.269</strong>.
+</p>
+<p>
+The figure below illustrates this transition using magnetization time series and histograms for each regime:
+</p>
+<br>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/isingmodel/image6.png" style="width: 200%;">
+  </figure>
+</div>
+<br>
+<p>
+The top row displays the <strong>magnetization per spin</strong> as a function of Monte Carlo (MC) steps, while the bottom row shows the corresponding <strong>histograms</strong> of sampled magnetization values over time.
+</p>
+<br>
+<ul>
+  <li>
+    <strong>For T &gt; T<sub>c</sub> , &beta; = 0.35</strong>:<br>
+    In the high-temperature (disordered) phase, the magnetization fluctuates rapidly around zero, and the histogram is approximately Gaussian, centered at <strong>m = 0</strong>. This confirms that the system is <strong>ergodic</strong>, exploring the full configuration space over time.
+  </li>
+  <br>
+  <li>
+    <strong>For T &asymp; T<sub>c</sub> , &beta; = 0.44</strong>:<br>
+    Near the critical temperature, the magnetization exhibits long-lived excursions between positive and negative states. The histogram becomes <strong>bimodal</strong>, indicating two competing phases. The system starts to show <strong>partial ergodicity breaking</strong> due to critical slowing down — transitions between phases are rare but still occur.
+  </li>
+  <br>
+  <li>
+    <strong>For T &lt; T<sub>c</sub> , &beta; = 0.5</strong>:<br>
+    In the low-temperature (ordered) phase, the system becomes trapped in a strongly magnetized state and does not switch to the opposite phase. The histogram has a single sharp peak far from zero. This behavior shows clear <strong>ergodicity breaking</strong>: the system explores only one of the two symmetry-broken minima.
+  </li>
+</ul>
+<br>
+<p>
+Together, these plots demonstrate how the Ising model transitions from an ergodic to a non-ergodic system as temperature decreases past the critical point <strong>T<sub>c</sub> &asymp; 2.269</strong>.
+</p>
+<br>
+<h1 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h1>
+<ol>
+  <li>
+    <a href="https://www.thphys.uni-heidelberg.de/~wolschin/statsem21_3s.pdf" target="_blank">
+      One- and two-dimensional Ising model: Statistical Physics Seminar by Prof. Wolschin
+    </a>
+  </li>
+  <li>
+    <a href="https://itp.uni-frankfurt.de/~mwagner/teaching/C_WS19/projects/Ising_proj.pdf" target="_blank">
+      Final Project: The 2D Ising Model, Author – Laurin Pannullo
+    </a>
+  </li>
+  <li>
+    <a href="http://rajeshrinet.github.io/blog/2014/ising-model/" target="_blank">
+      Ising Model Blog by Rajesh Singh
+    </a>
+  </li>
+  <li>
+    Mehran Kardar, <em>Statistical Physics of Particles</em>, Cambridge University Press, 2007.
+  </li>
+  <li>
+    R.K. Pathria and Paul D. Beale, <em>Statistical Mechanics</em>, 3rd Edition, Elsevier, 2011.
+  </li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/monte-carlo/">Monte Carlo</a></li>
+      <li><a href="http://localhost:1313/tags/mcmc/">MCMC</a></li>
+      <li><a href="http://localhost:1313/tags/markov-chains/">Markov Chains</a></li>
+      <li><a href="http://localhost:1313/tags/metropolis-hastings/">Metropolis-Hastings</a></li>
+      <li><a href="http://localhost:1313/tags/statistical-physics/">Statistical Physics</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Anisha Khatri</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+baseURL: "https://arkalim.netlify.app"
+languageCode: en-us
+title: Anisha Khatri
+theme: PaperMod
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: research
+      name: Research
+      url: /research
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 30
+    - identifier:   cv
+      name: CV
+      url: /cv
+      weight: 40
+    - identifier: about me
+      name: About Me
+      url: /about-me
+      weight: 50
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 60
+    # - identifier: notes
+    #   name: Notes
+    #   url: https://notes.arkalim.org
+    #   weight: 70
+
+params:
+  # theme
+  showToc: false
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideMeta: false
+  math: true
+
+  assets:
+  favicon: ""
+  customJS:
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+  # for enchanced SEO
+  env: production
+
+  # Home Page
+  profileMode:
+    enabled: true
+    title: "Anisha Khatri"
+    subtitle: |
+     Hi 👋 I'm Anisha, an M.Sc. graduate from the Department of Physics and Astrophysics, University of Delhi. 
+     My research interests lie primarily in **observational astrophysics**, particularly in **transients, galaxy** and **stellar evolution**.
+     <br> <br> I’m actively seeking research opportunities to strengthen my background and prepare for Ph.D.
+
+  
+    
+    imageUrl: "home/anisha2.jpeg"
+    imageWidth: 220
+    imageHeight: 220
+
+    # buttons:
+    #   - name: "View Projects"
+    #     url: "#projects"
+
+    # buttons:
+    #  - name: Resume
+    #    url: ""
+
+  # List View
+  hideDescriptionInList: false
+
+  # cover image for posts
+  cover:
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:khatri.anisha20@gmail.com"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/anishakhatri"
+    - name: "github"
+      url: "https://github.com/anishak20"
+  
+  # text search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# for search using Fuse.js
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# allow HTML in MD
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

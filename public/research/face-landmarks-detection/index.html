@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Flavor Physics: Precision Measurements of CKM Matrix elements | Anisha Khatri</title>
+<meta name="keywords" content="vub, flavor physics, Chi square, Python">
+<meta name="description" content="To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/research/face-landmarks-detection/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8943a90491e468f6ef8d33a5ef0a5845622d5178e663849217af60f670605c5b.css" integrity="sha256-iUOpBJHkaPbvjTOl7wpYRWItUXjmY4SSF69g9nBgXFs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/research/face-landmarks-detection/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/research/face-landmarks-detection/">
+  <meta property="og:site_name" content="Anisha Khatri">
+  <meta property="og:title" content="Flavor Physics: Precision Measurements of CKM Matrix elements">
+  <meta property="og:description" content="To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+    <meta property="article:tag" content="Vub">
+    <meta property="article:tag" content="Flavor Physics">
+    <meta property="article:tag" content="Chi Square">
+    <meta property="article:tag" content="Python">
+    <meta property="og:image" content="http://localhost:1313/blog/face-landmarks-detection/cover2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/blog/face-landmarks-detection/cover2.png">
+<meta name="twitter:title" content="Flavor Physics: Precision Measurements of CKM Matrix elements">
+<meta name="twitter:description" content="To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Researches",
+      "item": "http://localhost:1313/research/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Flavor Physics: Precision Measurements of CKM Matrix elements",
+      "item": "http://localhost:1313/research/face-landmarks-detection/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Flavor Physics: Precision Measurements of CKM Matrix elements",
+  "name": "Flavor Physics: Precision Measurements of CKM Matrix elements",
+  "description": "To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.",
+  "keywords": [
+    "vub", "flavor physics", "Chi square", "Python"
+  ],
+  "articleBody": "Description Supervisor: Dr. Sergi Gonzàlez-Solís (Serra Húnter Fellow, Institut de Ciències del Cosmos, Universitat de Barcelona previously associated with Los Alamos National Lab, USA)\nThis project was carried out during and post REYES 2023. I extracted the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties using non-linear least squares optimization method. The methodology and approach were adapted from the paper 1 and paper 2.\nIntroduction The B meson is a bound state consisting of a bottom (b) quark and either an up or down quark. It is an unstable, heavy meson that decays via the weak interaction, making it a valuable probe for studying flavor physics and the elements of the CKM matrix.\nOur interest lies in charged current interactions (weak interactions), which have their flavor structure encoded in the CKM matrix. The matrix describes the quark flavor-changing transitions in the standard model.\nVij matrix connects an up-type quark of the i-th generation to down-type quark of the j-th generation.\nV_CKM matrix is unitary,\nUnitarity violation can act as evidence for Beyond Standard Model (BSM) Physics. However, the Standard Model does not predict specific values for these elements—they must be determined experimentally. Of all the CKM parameters, |V_ub| is one of the least precisely known, and its accurate extraction helps in testing the consistency of the Standard Model.\nWhy V_ub ? The element V_ub connects an up-type quark to a bottom-type quark. It has the largest error amongst all the unitarity triangle parameters.\nWhere to look for it? Here, we can see that the value of V_ub from BaBar and Belle experiments are not consistent with each other. This implies that the value is not conclusive. Hence, it seems that the best suited decay to study V_ub is instead semileptonic B meson decay B0→π-l+νl.\nMethodology Form factor models Model 1: Single pole/ resonance The most simple parametrization is the single pole/resonance parametrization of the form factor which describes the production of B* meson. In the figure, we can observe the semi leptonic decay of B meson. Here, B* meson is an intermediate particle. When B meson decays into a pion, the intermediate B* meson decays into a W boson and a lepton pair. Now for testing this model we extracted the value of Vub= 4.62 x 10^(-3) using BR equation by substituting the following inputs,\nHowever, if we go deeper we can analyze not only the BR but also consider the theoretical expression for decay distribution alongside the experimental data. The theoretical expression is given as,\nwhere dB/dq2 represents decay distribution and q2 represents energy of lepton pair,\rFor analysis, we have used the decay distribution experimental data from Babar and Belle experiments. Then we have fitted the Model 1 with the extracted value of Vub to the experimental data.\nWe can observe that Model 1 does not fit the data points accurately. This implies that the single pole model is a poor description. This observation highlights the necessity of introducing a new model to better fit the data points to obtain a more optimal value of Vub.\rModel 2: multi-pole model In order to improve the description we have proposed the multi-pole model. Here in the expression we have introduced 𝛼 which is an unknown parameter which gives the position of the second effective pole. Now, we have fitted the Model 2 to the data and extracted the value of 𝛼 and V_ub by using χ² minimzation method. The χ² function to be minimized in our fit is defined as,\nThe extracted value of V_ub and 𝛼 are:\nThe experimental data fits better with the dipole model. The χ² test was performed to quantify how well a model represents the experimental data. The null and alternative hypothesis were defined as,\rH0: The experimental data follows the expected behavior of the fitted model. Ha: The experimental data deviates from the expected behavior of the fitted model. The obtained results are:\nχ² value: 10.57 , Degrees of freedom: 11\t, P-value: 0.48 Thus, the experimental data follows the expected behavior of the fitted model.\nIn the earlier analysis, the data points were assumed to be statistically independent. We now incorporate the correlations among the data points, which is essential for a more robust and realistic treatment of the uncertainties.\nCovariance Matrix A Covariance Matrix is a type of matrix used to describe the covariance values between two items in a random vector. It is also known as the variance-covariance matrix because the variance of each element is represented along the matrix’s major diagonal and the covariance is represented among the non-diagonal elements.\nIt helps us to identify the direction of the relationship(positive or negative) between variables. Covariance matrix are also essential to understand the high- dimensional datasets.\nThe general form of the covariance matrix is given as:\nPreviously we were fitting the Model 2 to the data using the χ² function defined as:\nUsing the curve fitting method, we can extract the covariance matrix, where the square roots of the diagonal elements provide the uncertainties associated with |V_ub| and α.\nOptimal |V_ub| = 0.0036673564708459404 Δ|V_ub| = 6.472941091232315e-05 Optimal α = 0.5525955917130655 Δα = 0.027348302682970248\nCovariance matrix: [[ 4.18989664e-09 -1.42442466e-06] [-1.42442466e-06 7.47929660e-04]] Now suppose that we have the covariance matrix for the experimental data points (dB/dq2), then our χ² function will be defined as,\nNow we can fit the Model 2 to the data using this χ² function to extract the values of V_ub and 𝛼.\nOptimal |V_ub|: 0.0036425765825239187 Optimal α: 0.5517995594632777 Minimum χ²: 0.10357435421646363 If we want to extract f_+(0) (normalization factor), and we have data from Lattice QCD simulations for form factor, then the χ² function will be defined as,\nThe extracted values are:\nMinimum chi² : 0.0009813578763637797 Optimal f_plus0: 0.2916072589130864 Optimal alpha : 0.43369605256977545 Delta f_plus0 : 0.015774043436603775 Delta alpha : 0.03757979960772628 Covariance matrix of parameters: [[ 0.00024882 -0.00056022] [-0.00056022 0.00141224]] Conclusion Semileptonic B-meson decays are an effective way to obtain accurate values for V_ub. The standard model only provides the structure of the transitions but does not predict specific values for parameters. The fitted model with the aforementioned values adequately represents the behavior of the experimental data gathered.\nHowever, the resulting values, though statistically meaningful, are not absolute and are subject to uncertainties arising from both experimental and theoretical inputs.\nProject Report\rView my Github Repository for the full details and implementation of the work.\n",
+  "wordCount" : "1066",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/blog/face-landmarks-detection/cover2.png","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/research/face-landmarks-detection/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anisha Khatri",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anisha Khatri (Alt + H)">Anisha Khatri</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about-me" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/research/">Researches</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Flavor Physics: Precision Measurements of CKM Matrix elements
+    </h1>
+    <div class="post-description">
+      To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.
+    </div>
+    <div class="post-meta">
+
+
+June 2023- Nov 2023
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/blog/face-landmarks-detection/cover2.png" alt="">
+        
+</figure>
+  <div class="post-content"><h1 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h1>
+<p><strong>Supervisor:</strong> <a href="https://inspirehep.net/authors/1247615"><strong>Dr. Sergi Gonzàlez-Solís</strong></a> (Serra Húnter Fellow, Institut de Ciències del Cosmos, Universitat de Barcelona previously associated with Los Alamos National Lab, USA)</p>
+<p>This project was carried out during and post <a href="https://physics.berkeley.edu/visiting-students/reyes-remote-experience-young-engineers-and-scientists"><strong>REYES 2023</strong></a>. I extracted the CKM matrix element <strong>V₍ub₎</strong>, the shape parameter <strong>α</strong>, the form factor normalization <strong>f₊(0)</strong>, and their associated uncertainties using non-linear least squares optimization method. The methodology and approach were adapted from the <a href="https://arxiv.org/pdf/1805.11262">paper 1</a> and <a href="https://arxiv.org/pdf/2110.06153">paper 2</a>.</p>
+<h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
+<p>The B meson is a bound state consisting of a bottom (b) quark and either an up or down quark. It is an unstable, heavy meson that decays via the weak interaction, making it a valuable probe for studying flavor physics and the elements of the CKM matrix.</p>
+<p>Our interest lies in charged current interactions (weak interactions), which have their flavor structure encoded in the <a href="https://en.wikipedia.org/wiki/Cabibbo%E2%80%93Kobayashi%E2%80%93Maskawa_matrix">CKM matrix</a>. The matrix describes the quark flavor-changing transitions in the standard model.</p>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/blog/face-landmarks-detection/lagrangian.png" style="width: 80%;">
+</div>
+<p>Vij matrix connects an up-type quark of the i-th generation to down-type quark of the j-th generation.</p>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/blog/face-landmarks-detection/vij.png" style="width: 100%;">
+</div>
+<p>V_CKM matrix is unitary,</p>
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="/blog/face-landmarks-detection/unitary.png" style="width: 100%;">
+</div>
+<p>Unitarity violation can act as evidence for <strong>Beyond Standard Model</strong> (BSM) Physics. However, the Standard Model does not predict specific values for these elements—they must be determined experimentally. Of all the CKM parameters, |V_ub| is one of the least precisely known, and its accurate extraction helps in testing the consistency of the Standard Model.</p>
+<h2 id="why-v_ub-">Why V_ub ?<a hidden class="anchor" aria-hidden="true" href="#why-v_ub-">#</a></h2>
+<p>The element V_ub connects an up-type quark to a bottom-type quark. It has the largest error amongst all the unitarity triangle parameters.</p>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/blog/face-landmarks-detection/vub2.png" style="width: 40%;">
+</div>
+<h2 id="where-to-look-for-it">Where to look for it?<a hidden class="anchor" aria-hidden="true" href="#where-to-look-for-it">#</a></h2>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/blog/face-landmarks-detection/image1.png" style="width: 100%;">
+</div>
+<p>Here, we can see that the value of V_ub from BaBar and Belle experiments are not consistent with each other. This implies that the value is not conclusive. Hence, it seems that the best suited decay to study V_ub is instead semileptonic B meson decay B0→π-l+νl.</p>
+<h1 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h1>
+<h2 id="form-factor-models">Form factor models<a hidden class="anchor" aria-hidden="true" href="#form-factor-models">#</a></h2>
+<ol>
+<li><strong>Model 1</strong>: Single pole/ resonance <br>
+The most simple parametrization is the single pole/resonance parametrization of the form factor which describes the production of B* meson. In the figure, we can observe the semi leptonic decay of B meson. Here, B* meson is an intermediate particle. When B meson decays into a pion, the intermediate B* meson decays into a W boson and a lepton pair.</li>
+</ol>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/model1.png" style="width: 70%;">
+  <img src="/blog/face-landmarks-detection/vub3.png" style="width: 50%;">
+</div>
+<p>Now for testing this model we extracted the value of <strong>Vub= 4.62 x 10^(-3)</strong> using BR equation by substituting the following inputs,</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/model1_.png" style="width: 100%;">
+</div>
+<p>However, if we go deeper we can analyze not only the BR but also consider the theoretical expression for decay distribution alongside the experimental data. The theoretical expression is given as,</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/image2.png" style="width: 100%;">
+</div>
+ where dB/dq2 represents decay distribution and q2 represents energy of lepton pair,
+<p>For analysis, we have used the decay distribution experimental data from Babar and Belle experiments. Then we have fitted the Model 1 with the extracted value of Vub to the experimental data.</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/plot1.png" style="width: 70%;">
+</div>
+We can observe that Model 1 does not fit the data points accurately. This implies that the single pole model is a poor description. This observation highlights the necessity of introducing a new model to better fit the data points to obtain a more optimal value of Vub.
+<ol start="2">
+<li><strong>Model 2</strong>: multi-pole model <br>
+In order to improve the description we have proposed the multi-pole model.</li>
+</ol>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/model2.png" style="width: 70%;">
+</div>
+Here in the expression we have introduced 𝛼 which is an unknown parameter which gives the position of the second effective pole. 
+<br><br>
+<p>Now, we have fitted the Model 2 to the data and extracted the value of 𝛼 and V_ub by using <strong>χ² minimzation</strong> method.
+The χ² function to be minimized in our fit is defined as,</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/chi2.png" style="width: 100%;">
+</div>
+<p>The extracted value of V_ub and 𝛼 are:</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/result.png" style="width: 50%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/finalplot.png" style="width: 70%;">
+</div>
+The experimental data fits better with the dipole model. The χ² test was performed to quantify how well a model represents the experimental data. The null and alternative hypothesis were defined as,
+<ul>
+<li><strong>H0</strong>: The experimental data follows the expected behavior of the fitted model.</li>
+<li><strong>Ha</strong>: The experimental data deviates from the expected behavior of the fitted model.</li>
+</ul>
+<p>The obtained results are:</p>
+<ul>
+<li><strong>χ² value</strong>: 10.57 , <strong>Degrees of freedom</strong>: 11	,  <strong>P-value</strong>: 0.48</li>
+</ul>
+<p>Thus, the experimental data follows the expected behavior of the fitted model.</p>
+<hr>
+<p>In the earlier analysis, the data points were assumed to be statistically independent. We now incorporate the correlations among the data points, which is essential for a more robust and realistic treatment of the uncertainties.</p>
+<h2 id="covariance-matrix">Covariance Matrix<a hidden class="anchor" aria-hidden="true" href="#covariance-matrix">#</a></h2>
+<p>A Covariance Matrix is a type of matrix used to describe the covariance values between two items in a random vector. It is also known as the variance-covariance matrix because the variance of each element is represented along the matrix’s major diagonal and the covariance is represented among the non-diagonal elements.</p>
+<p>It helps us to identify the direction of the relationship(positive or negative) between variables. Covariance matrix are also essential to understand the high- dimensional datasets.</p>
+<p>The general form of the covariance matrix is given as:</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/cov3.png" style="width: 50%;">
+</div>
+<p>Previously we were fitting the Model 2 to the data using the χ² function defined as:</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/cov1.png" style="width: 100%;">
+</div>
+<p>Using the curve fitting method, we can extract the covariance matrix, where the square roots of the diagonal elements provide the uncertainties associated with |V_ub| and α.</p>
+<blockquote>
+<p>Optimal |V_ub| = 0.0036673564708459404 <br>
+Δ|V_ub| = 6.472941091232315e-05 <br>
+Optimal α = 0.5525955917130655 <br>
+Δα = 0.027348302682970248</p></blockquote>
+<blockquote>
+<p>Covariance matrix: <br>
+[[ 4.18989664e-09 -1.42442466e-06] <br>
+[-1.42442466e-06  7.47929660e-04]] <br></p></blockquote>
+<p>Now suppose that we have the <strong>covariance matrix</strong> for the experimental data points (dB/dq2), then our <strong>χ² function</strong> will be defined as,</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/cov4.png" style="width: 120%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/covij.png" style="width: 100%;">
+</div>
+<p>Now we can fit the Model 2 to the data using this χ² function to extract the values of V_ub and 𝛼.</p>
+<blockquote>
+<p>Optimal |V_ub|: 0.0036425765825239187 <br>
+Optimal α: 0.5517995594632777 <br>
+Minimum χ²: 0.10357435421646363 <br></p></blockquote>
+<p>If we want to extract f_+(0) (normalization factor), and we have data from Lattice QCD simulations for form factor, then the χ² function will be defined as,</p>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/cov2.png" style="width: 100%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 20px;">
+  <img src="/blog/face-landmarks-detection/covijlattice.png" style="width: 100%;">
+</div>
+<p>The extracted values are:</p>
+<blockquote>
+<p>Minimum chi²   : 0.0009813578763637797 <br>
+Optimal f_plus0: 0.2916072589130864 <br>
+Optimal alpha  : 0.43369605256977545 <br>
+Delta f_plus0  : 0.015774043436603775 <br>
+Delta alpha    : 0.03757979960772628 <br>
+Covariance matrix of parameters: <br>
+[[ 0.00024882 -0.00056022] <br>
+[-0.00056022  0.00141224]] <br></p></blockquote>
+<h1 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h1>
+<p><strong>Semileptonic B-meson decays</strong> are an effective way to obtain accurate values for V_ub. The standard model only provides the structure of the transitions but does not predict specific values for parameters. The fitted model with the aforementioned values adequately represents the behavior of the experimental data gathered.</p>
+<p>However, the resulting values, though statistically meaningful, are not absolute and are subject to uncertainties arising from both experimental and theoretical inputs.</p>
+ <a href="https://drive.google.com/file/d/1b6wefz_heunm0p8oenY2CvoDSpTLSz_u/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration: none;">
+    <button style="width: 100%; padding: 14px 24px; font-size: 16px; background-color: #007acc; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Project Report
+    </button>
+  </a>
+</div>
+<p><br><br></p>
+<p>View my <a href="https://github.com/anishak20/Hadronic-Physics" target="_blank" style="text-decoration: underline;">Github Repository</a> for the full details and implementation of the work.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/vub/">Vub</a></li>
+      <li><a href="http://localhost:1313/tags/flavor-physics/">Flavor Physics</a></li>
+      <li><a href="http://localhost:1313/tags/chi-square/">Chi Square</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Anisha Khatri</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

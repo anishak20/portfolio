@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Spectral lag in gamma-ray bursts | Anisha Khatri</title>
+<meta name="keywords" content="Gamma-rays, GRBs, Statistical Analysis, Python">
+<meta name="description" content="Estimating the spectral lag in gamma ray bursts to understand its emission mechanism">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/grbs/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8943a90491e468f6ef8d33a5ef0a5845622d5178e663849217af60f670605c5b.css" integrity="sha256-iUOpBJHkaPbvjTOl7wpYRWItUXjmY4SSF69g9nBgXFs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/grbs/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/projects/grbs/">
+  <meta property="og:site_name" content="Anisha Khatri">
+  <meta property="og:title" content="Spectral lag in gamma-ray bursts">
+  <meta property="og:description" content="Estimating the spectral lag in gamma ray bursts to understand its emission mechanism">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:tag" content="Gamma-Rays">
+    <meta property="article:tag" content="GRBs">
+    <meta property="article:tag" content="Statistical Analysis">
+    <meta property="article:tag" content="Python">
+    <meta property="og:image" content="http://localhost:1313/projects/grbs/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/projects/grbs/cover.png">
+<meta name="twitter:title" content="Spectral lag in gamma-ray bursts">
+<meta name="twitter:description" content="Estimating the spectral lag in gamma ray bursts to understand its emission mechanism">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Spectral lag in gamma-ray bursts",
+      "item": "http://localhost:1313/projects/grbs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Spectral lag in gamma-ray bursts",
+  "name": "Spectral lag in gamma-ray bursts",
+  "description": "Estimating the spectral lag in gamma ray bursts to understand its emission mechanism",
+  "keywords": [
+    "Gamma-rays", "GRBs", "Statistical Analysis", "Python"
+  ],
+  "articleBody": "\rDescription Guide : Khushboo Sharma (Ph.D. student at ARIES, Nainital, India)\nThis project was carried out as part of the ARIES Training School in Observational Astronomy and Atmospheric Sciences (ATSOAA) held in Nainital, India. In this project, I constructed light curves of GRB 240825A from the FERMI GBM detector data and performed a cross-correlation analysis between two energy bands to estimate time delays between low and high-energy photon arrivals.\nWhat are Gamma-ray Bursts? Gamma-ray bursts (GRBs) are among the most energetic transients in the universe. They can last from just a few milliseconds to several minutes and are observed at cosmological distances, with redshifts ranging from as low as 0.008 up to as high as 9.4. Their isotropic luminosities are exceptionally high — spanning from 10^47 to 10^54 erg/s. For comparison, the luminosity of the Sun is about 10^33 erg/s.\nCredit: A Roquette/ESO/CC BY-SA\rGRBs emit across a broad range of the electromagnetic spectrum, from radio waves to TeV gamma rays. There are two main types of GRBs: long and short.\nLong-duration GRBs are generally believed to originate from collapsars — the core collapse of a massive star at the end of its life. Short-duration GRBs, on the other hand, are thought to result from the merger of compact objects, such as two neutron stars or a neutron star and a black hole. Prompt Emission and Afterglow: Two Powerful Phases of GRBs GRBs are short-lived but extremely energetic events, typically lasting from a few seconds to a few days. They are generally divided into two distinct phases: the prompt emission and the afterglow.\nPrompt Emission Phase The prompt emission is the initial phase of a GRB and lasts only a few seconds.\nIt originates from internal shocks or magnetic reconnection occurring within the fast-moving jet launched by the central source. This phase takes place within the ejected material, before it has interacted with the surrounding environment. The emission is dominated by gamma rays, making it extremely bright and detectable even from cosmological distances. Afterglow Phase The afterglow follows the prompt emission and can last for hours to several days.\nIt is caused by external shocks that form when the jet interacts with the surrounding interstellar medium (ISM). This phase occurs in the shocked external environment, where the jet loses energy to the medium. The emission spans a wide range of wavelengths, including X-rays, optical, infrared, and radio, and gradually fades over time. The Fermi Instrument The Fermi Gamma-ray Space Telescope carries two main instruments:\nGamma-ray Burst Monitor (GBM): Covers 8 keV to 40 MeV energy range. It has 14 detectors—12 NaI detectors (8 keV to 1 MeV) and 2 BGO detectors (200 keV to 40 MeV). Large Area Telescope (LAT): Detects higher-energy photons in the range of 20 MeV to 300 GeV. These instruments records the arrival time and energy of individual photons emitted by distant GRBs. Although all photons travel at the speed of light, they are emitted at slightly different times due to the internal dynamics of the burst. This timing difference is what we refer to as spectral lag.\nWhat is Spectral Lag ? Spectral lag refers to the time delay between the arrival of high-energy photons and low-energy photons during a Gamma-Ray Burst (GRB). It is one of the key temporal features observed in GRB light curves and is typically measured in milliseconds.\nSpectral lag plays a significant role in:\nUnderstanding emission mechanisms involved in GRBs. Estimating GRB redshifts indirectly, especially when direct measurements are unavailable. Interpretation of Spectral Lag Spectral lag is observed in two primary forms, each providing insights into the emission mechanisms and internal dynamics of GRBs.\nPositive Spectral Lag In a positive lag, high-energy photons are detected earlier than low-energy photons. This can be explained by synchrotron cooling, where high-energy photons are emitted first. As the electrons lose energy over time, they emit lower-energy photons, resulting in a delayed arrival of the latter. Negative Spectral Lag In a negative lag, low-energy photons are detected before high-energy photons. This can be attributed to inverse Compton up-scattering, where soft (low-energy) photons are boosted to higher energies by interactions with hot electron clouds in the jet. These upscattered high-energy photons are emitted later, causing the observed delay. Methodology Data Source Instrument: Fermi Gamma-ray Space Telescope\nGBM (Gamma-ray Burst Monitor): 8 keV – 40 MeV\n12 NaI detectors (8 keV – 1 MeV) 2 BGO detectors (200 keV – 40 MeV) Data Format: FITS (.fit, .pha, .rsp2)\nSource: Fermi GBM Burst Catalog (FERMIGBRST)\nDownload Method: wget from GBM archive\nEnergy Channels: 128, with mapping defined in .rsp2 response file\nDetector Selection: NaI N7 was chosen as it recorded the brightest signal and had the smallest angle relative to the GRB source, resulting in maximum photon counts and better signal-to-noise.\nLight Curve Generation Generated light curves in 3 energy bands:\nLow: 8–50 keV Medium: 50–300 keV High: 300–1000 keV Cross-Correlation Method Cross-correlation estimates the time shift needed to best align the two light curves. It computes similarity as a function of time lag between the two curves, and the peak of the Cross-Correlation Function (CCF) gives the optimal lag value. It was implemented using scipy.signal.correlate() from SciPy library in Python.\nData Files Data File\rDescription\rUsage\r.fit\nglg_tte_n7_bn240825662_v00.fit\rTime-Tagged Event data from NaI detector N7\rExtract photon arrival times and PHA channels\r.pha\nglg_cspec_n7_bn240825662_v00.pha\rBinned count spectrum with energy boundaries\rIdentify energy channels corresponding to 8–50 keV\r.rsp2\nglg_cspec_n7_bn240825662_v04.rsp2\rInstrument response matrix\rMap channels to energy and filter 8–50 keV photons\rResults Light Curves GRB240825A (T90 = 3.968 ± 0.091 s) Energy bands:\nLow: 8–50 keV Medium: 50–300 keV High: 300–1000 keV Estimated Spectral Lag (from CCF) Energy Bands (keV)\rSpectral Lag\r8–50 vs 50–300\r–64 ms\r50–300 vs 300–1000\r–64 ms\r8–50 vs 300–1000\r–128 ms\rError Estimation (Gaussian Fit) Energy Bands (keV)\rSpectral Lag (Peak CCF)\rSpectral Lag (Gaussian Fit)\r8–50 vs 50–300\r–64 ms\r–299 ± 8 ms\r8–50 vs 300–1000\r–128 ms\r–334 ± 9 ms\rDiscussion A negative spectral lag was observed for GRB 240825A. Negative spectral lag in GRBs, though rare, can arise from inverse Compton up-scattering of soft photons by a surrounding hot electron medium. A notable difference exists between the spectral lag values obtained from the peak of the CCF and from Gaussian fitting. This discrepancy suggests that the CCF may follow a Lorentzian profile rather than a Gaussian one.\nTo address this, I’m currently working on fitting a Lorentzian function to the CCF, which I believe may yield a more accurate estimate of the lag. Further improvements and analysis are ongoing to refine the results.\n",
+  "wordCount" : "1097",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/projects/grbs/cover.png","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/grbs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anisha Khatri",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anisha Khatri (Alt + H)">Anisha Khatri</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about-me" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Spectral lag in gamma-ray bursts
+    </h1>
+    <div class="post-description">
+      Estimating the spectral lag in gamma ray bursts to understand its emission mechanism
+    </div>
+    <div class="post-meta">
+
+
+April 2025 - Ongoing
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/projects/grbs/cover.png" alt="">
+        
+</figure>
+  <div class="post-content"><!-- ### 🔗 [Colab Notebook](https://colab.research.google.com/drive/1Q553uslYW3Ho6P1G46SOEDxOS_VmHXfJ) -->
+<h2 id="description">Description<a hidden class="anchor" aria-hidden="true" href="#description">#</a></h2>
+<p><strong>Guide :</strong> <strong>Khushboo Sharma</strong> (Ph.D. student at ARIES, Nainital, India)</p>
+<p>This project was carried out as part of the ARIES Training School in Observational Astronomy and Atmospheric Sciences (<a href="https://www.aries.res.in/ATSOAA-2025"><strong>ATSOAA</strong></a>) held in Nainital, India. In this project, I constructed light curves of <strong>GRB 240825A</strong> from the FERMI GBM detector data and performed a cross-correlation analysis between two energy bands to estimate time delays between low and high-energy photon arrivals.</p>
+<h2 id="what-are-gamma-ray-bursts">What are Gamma-ray Bursts?<a hidden class="anchor" aria-hidden="true" href="#what-are-gamma-ray-bursts">#</a></h2>
+<p>Gamma-ray bursts (GRBs) are among the most energetic transients in the universe. They can last from just a few milliseconds to several minutes and are observed at cosmological distances, with redshifts ranging from as low as 0.008 up to as high as 9.4. Their isotropic luminosities are exceptionally high — spanning from 10^47 to 10^54 erg/s. For comparison, the luminosity of the Sun is about 10^33 erg/s.</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/grb.png" style="width: 100%;">
+    <figcaption style="font-size: 0.9em; color: #555;">Credit: A Roquette/ESO/CC BY-SA</figcaption>
+  </figure>
+</div>
+<p>GRBs emit across a broad range of the electromagnetic spectrum, from radio waves to TeV gamma rays. There are two main types of GRBs: <strong>long</strong> and <strong>short</strong>.</p>
+<ul>
+<li><strong>Long-duration GRBs</strong> are generally believed to originate from <em>collapsars</em> — the core collapse of a massive star at the end of its life.</li>
+<li><strong>Short-duration GRBs</strong>, on the other hand, are thought to result from the merger of compact objects, such as two neutron stars or a neutron star and a black hole.</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/grb1.png" style="width: 60%;">
+  </figure>
+</div>
+<h2 id="prompt-emission-and-afterglow-two-powerful-phases-of-grbs">Prompt Emission and Afterglow: Two Powerful Phases of GRBs<a hidden class="anchor" aria-hidden="true" href="#prompt-emission-and-afterglow-two-powerful-phases-of-grbs">#</a></h2>
+<p>GRBs are short-lived but extremely energetic events, typically lasting from a few seconds to a few days. They are generally divided into two distinct phases: the <strong>prompt emission</strong> and the <strong>afterglow</strong>.</p>
+<h3 id="prompt-emission-phase"><strong>Prompt Emission Phase</strong><a hidden class="anchor" aria-hidden="true" href="#prompt-emission-phase">#</a></h3>
+<p>The prompt emission is the initial phase of a GRB and lasts only a few seconds.</p>
+<ul>
+<li>It originates from <strong>internal shocks</strong> or <strong>magnetic reconnection</strong> occurring within the fast-moving jet launched by the central source.</li>
+<li>This phase takes place <strong>within the ejected material</strong>, before it has interacted with the surrounding environment.</li>
+<li>The emission is <strong>dominated by gamma rays</strong>, making it extremely bright and detectable even from cosmological distances.</li>
+</ul>
+<h3 id="afterglow-phase"><strong>Afterglow Phase</strong><a hidden class="anchor" aria-hidden="true" href="#afterglow-phase">#</a></h3>
+<p>The afterglow follows the prompt emission and can last for <strong>hours to several days</strong>.</p>
+<ul>
+<li>It is caused by <strong>external shocks</strong> that form when the jet interacts with the surrounding <strong>interstellar medium (ISM)</strong>.</li>
+<li>This phase occurs in the <strong>shocked external environment</strong>, where the jet loses energy to the medium.</li>
+<li>The emission spans a wide range of wavelengths, including <strong>X-rays, optical, infrared, and radio</strong>, and gradually fades over time.</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/phase.png" style="width: 70%;">
+  </figure>
+</div>
+<h2 id="the-fermi-instrument">The Fermi Instrument<a hidden class="anchor" aria-hidden="true" href="#the-fermi-instrument">#</a></h2>
+<p>The <strong>Fermi Gamma-ray Space Telescope</strong> carries two main instruments:</p>
+<ul>
+<li><strong>Gamma-ray Burst Monitor (GBM)</strong>: Covers 8 keV to 40 MeV energy range. It has <strong>14 detectors</strong>—12 NaI detectors (8 keV to 1 MeV) and 2 BGO detectors (200 keV to 40 MeV).</li>
+<li><strong>Large Area Telescope (LAT)</strong>: Detects higher-energy photons in the range of 20 MeV to 300 GeV.</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/fermi.png" style="width: 50%;">
+  </figure>
+</div>
+<p>These instruments records the arrival time and energy of individual photons emitted by distant GRBs. Although all photons travel at the speed of light, they are emitted at slightly different times due to the internal dynamics of the burst. This timing difference is what we refer to as spectral lag.</p>
+<h2 id="what-is-spectral-lag-">What is Spectral Lag ?<a hidden class="anchor" aria-hidden="true" href="#what-is-spectral-lag-">#</a></h2>
+<p><strong>Spectral lag</strong> refers to the time delay between the arrival of high-energy photons and low-energy photons during a Gamma-Ray Burst (GRB). It is one of the key temporal features observed in GRB light curves and is typically measured in <strong>milliseconds</strong>.</p>
+<p>Spectral lag plays a significant role in:</p>
+<ul>
+<li><strong>Understanding emission mechanisms</strong> involved in GRBs.</li>
+<li><strong>Estimating GRB redshifts indirectly</strong>, especially when direct measurements are unavailable.</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/lag1.png" style="width: 50%;">
+  </figure>
+</div>
+<h3 id="interpretation-of-spectral-lag">Interpretation of Spectral Lag<a hidden class="anchor" aria-hidden="true" href="#interpretation-of-spectral-lag">#</a></h3>
+<p>Spectral lag is observed in two primary forms, each providing insights into the emission mechanisms and internal dynamics of GRBs.</p>
+<h4 id="positive-spectral-lag"><strong>Positive Spectral Lag</strong><a hidden class="anchor" aria-hidden="true" href="#positive-spectral-lag">#</a></h4>
+<ul>
+<li>In a <strong>positive lag</strong>, high-energy photons are detected <em>earlier</em> than low-energy photons.</li>
+<li>This can be explained by <strong>synchrotron cooling</strong>, where high-energy photons are emitted first. As the electrons lose energy over time, they emit lower-energy photons, resulting in a delayed arrival of the latter.</li>
+</ul>
+<h4 id="negative-spectral-lag"><strong>Negative Spectral Lag</strong><a hidden class="anchor" aria-hidden="true" href="#negative-spectral-lag">#</a></h4>
+<ul>
+<li>In a <strong>negative lag</strong>, low-energy photons are detected <em>before</em> high-energy photons.</li>
+<li>This can be attributed to <strong>inverse Compton up-scattering</strong>, where soft (low-energy) photons are boosted to higher energies by interactions with hot electron clouds in the jet. These upscattered high-energy photons are emitted later, causing the observed delay.</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/compton.png" style="width: 40%;">
+  </figure>
+</div>
+<h2 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h2>
+<h3 id="data-source">Data Source<a hidden class="anchor" aria-hidden="true" href="#data-source">#</a></h3>
+<p><strong>Instrument</strong>: <em>Fermi Gamma-ray Space Telescope</em></p>
+<ul>
+<li>
+<p><strong>GBM (Gamma-ray Burst Monitor)</strong>: 8 keV – 40 MeV</p>
+<ul>
+<li>12 NaI detectors (8 keV – 1 MeV)</li>
+<li>2 BGO detectors (200 keV – 40 MeV)</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Format</strong>: FITS (.fit, .pha, .rsp2)</p>
+</li>
+<li>
+<p><strong>Source</strong>: Fermi GBM Burst Catalog (FERMIGBRST)</p>
+</li>
+<li>
+<p><strong>Download Method</strong>: <code>wget</code> from GBM archive</p>
+</li>
+<li>
+<p><strong>Energy Channels</strong>: 128, with mapping defined in <code>.rsp2</code> response file</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Detector Selection</strong>: NaI N7 was chosen as it recorded the brightest signal and had the smallest angle relative to the GRB source, resulting in maximum photon counts and better signal-to-noise.</p></blockquote>
+<h3 id="light-curve-generation">Light Curve Generation<a hidden class="anchor" aria-hidden="true" href="#light-curve-generation">#</a></h3>
+<ul>
+<li>
+<p>Generated light curves in 3 energy bands:</p>
+<ul>
+<li>Low: 8–50 keV</li>
+<li>Medium: 50–300 keV</li>
+<li>High: 300–1000 keV</li>
+</ul>
+</li>
+</ul>
+<h3 id="cross-correlation-method">Cross-Correlation Method<a hidden class="anchor" aria-hidden="true" href="#cross-correlation-method">#</a></h3>
+<p>Cross-correlation estimates the time shift needed to best align the two light curves. It computes similarity as a function of time lag between the two curves, and the peak of the Cross-Correlation Function (CCF) gives the optimal lag value. It was implemented using <code>scipy.signal.correlate()</code> from SciPy library in Python.</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/cc.gif" style="width: 80%;">
+  </figure>
+</div>
+<h2 id="data-files">Data Files<a hidden class="anchor" aria-hidden="true" href="#data-files">#</a></h2>
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f21f;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Data File</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Description</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>.fit</strong><br><code>glg_tte_n7_bn240825662_v00.fit</code></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Time-Tagged Event data from NaI detector N7</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Extract photon arrival times and PHA channels</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>.pha</strong><br><code>glg_cspec_n7_bn240825662_v00.pha</code></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Binned count spectrum with energy boundaries</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Identify energy channels corresponding to 8–50 keV</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;"><strong>.rsp2</strong><br><code>glg_cspec_n7_bn240825662_v04.rsp2</code></td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Instrument response matrix</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">Map channels to energy and filter 8–50 keV photons</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h2>
+<h3 id="light-curves">Light Curves<a hidden class="anchor" aria-hidden="true" href="#light-curves">#</a></h3>
+<p><strong>GRB240825A</strong> (T90 = 3.968 ± 0.091 s)
+Energy bands:</p>
+<ul>
+<li>Low: 8–50 keV</li>
+<li>Medium: 50–300 keV</li>
+<li>High: 300–1000 keV</li>
+</ul>
+<div style="display: flex; justify-content: flex-start; gap: 10px;">
+  <figure style="margin: 0;">
+    <img src="/projects/grbs/lightcurve.png" style="width: 80%;">
+  </figure>
+</div>
+<h3 id="estimated-spectral-lag-from-ccf">Estimated Spectral Lag (from CCF)<a hidden class="anchor" aria-hidden="true" href="#estimated-spectral-lag-from-ccf">#</a></h3>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/projects/grbs/result1.png" style="width: 50%;">
+  <img src="/projects/grbs/result2.png" style="width: 50%;">
+</div>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/projects/grbs/result3.png" style="width: 50%;">
+</div>
+<br>
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="background-color:  #f2f2f21f;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Energy Bands (keV)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Spectral Lag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">8–50 vs 50–300</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–64 ms</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">50–300 vs 300–1000</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–64 ms</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">8–50 vs 300–1000</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–128 ms</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h3 id="error-estimation-gaussian-fit">Error Estimation (Gaussian Fit)<a hidden class="anchor" aria-hidden="true" href="#error-estimation-gaussian-fit">#</a></h3>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/projects/grbs/result4.png" style="width: 60%;">
+  <img src="/projects/grbs/result5.png" style="width: 60%;">
+</div>
+<br>
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f21f;">
+      <th style="padding: 8px; border: 1px solid #ddd;">Energy Bands (keV)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Spectral Lag (Peak CCF)</th>
+      <th style="padding: 8px; border: 1px solid #ddd;">Spectral Lag (Gaussian Fit)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">8–50 vs 50–300</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–64 ms</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–299 ± 8 ms</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid #ddd;">8–50 vs 300–1000</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–128 ms</td>
+      <td style="padding: 8px; border: 1px solid #ddd;">–334 ± 9 ms</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="discussion">Discussion<a hidden class="anchor" aria-hidden="true" href="#discussion">#</a></h2>
+<p>A <strong>negative spectral lag</strong> was observed for <strong>GRB 240825A</strong>. Negative spectral lag in GRBs, though rare, can arise from inverse Compton up-scattering of soft photons by a surrounding hot electron medium. A notable difference exists between the spectral lag values obtained from the peak of the CCF and from Gaussian fitting. This discrepancy suggests that the CCF may follow a <strong>Lorentzian</strong> profile rather than a <strong>Gaussian</strong> one.</p>
+<p>To address this, I’m currently working on fitting a Lorentzian function to the CCF, which I believe may yield a more accurate estimate of the lag. Further improvements and analysis are ongoing to refine the results.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/gamma-rays/">Gamma-Rays</a></li>
+      <li><a href="http://localhost:1313/tags/grbs/">GRBs</a></li>
+      <li><a href="http://localhost:1313/tags/statistical-analysis/">Statistical Analysis</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Anisha Khatri</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

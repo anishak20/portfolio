@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Local galaxies as time machines: Navigating biases in studying Cosmic Evolution | Anisha Khatri</title>
+<meta name="keywords" content="galaxies, galaxy evolution, Python, Astropy, Data Analysis">
+<meta name="description" content="Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/research/iastro/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8943a90491e468f6ef8d33a5ef0a5845622d5178e663849217af60f670605c5b.css" integrity="sha256-iUOpBJHkaPbvjTOl7wpYRWItUXjmY4SSF69g9nBgXFs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/research/iastro/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/research/iastro/">
+  <meta property="og:site_name" content="Anisha Khatri">
+  <meta property="og:title" content="Local galaxies as time machines: Navigating biases in studying Cosmic Evolution">
+  <meta property="og:description" content="Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+    <meta property="article:tag" content="Galaxies">
+    <meta property="article:tag" content="Galaxy Evolution">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Astropy">
+    <meta property="article:tag" content="Data Analysis">
+    <meta property="og:image" content="http://localhost:1313/blog/iastro/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/blog/iastro/cover.png">
+<meta name="twitter:title" content="Local galaxies as time machines: Navigating biases in studying Cosmic Evolution">
+<meta name="twitter:description" content="Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Researches",
+      "item": "http://localhost:1313/research/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Local galaxies as time machines: Navigating biases in studying Cosmic Evolution",
+      "item": "http://localhost:1313/research/iastro/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Local galaxies as time machines: Navigating biases in studying Cosmic Evolution",
+  "name": "Local galaxies as time machines: Navigating biases in studying Cosmic Evolution",
+  "description": "Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.",
+  "keywords": [
+    "galaxies", "galaxy evolution", "Python", "Astropy", "Data Analysis"
+  ],
+  "articleBody": "Introduction Supervisor: Ana S. Paulino Afonso (Researcher, Instituto de Astrofísica e Ciências do Espaço, Portugal)\nThis project was undertaken as part of a summer research internship at the Instituto de Astrofísica e Ciências do Espaço (IAstro) , Portugal. During this internship, I have simulated and applied the transformation effects: Cosmological dimming, scaling and modelling of luminosity evolution to the host galaxy SN2005hc at three different values of redshift using the artificial redshifting algorithm (FERENGI). The main project aim was to investigate the observational biases that influence the estimation of physical parameters such as Star Formation Rate, Stellar Mass in galaxies.\nWhy do we need to examine the biases? The motivation behind this project stems from the fact that galaxies tend to appear increasingly irregular at higher redshifts. However, to make meaningful comparisons between galaxy populations across different cosmic epochs, it’s essential to account for various observational limitations. These include selection and instrumental biases as well as cosmological effects. For example, the surface brightness dimming effect impacts the flux of the galaxy by two orders of magnitude from z=0 to z=2. This strongly effects the galaxy morphological studies.\nNearly 10,000 galaxies captured in the Hubble Ultra Deep Field, revealing 13 billion years of cosmic history. Credits: NASA, ESA, STScI \u0026 HUDF Team\rData Source The data used is acquired from the amusing survey which focuses on the galaxies hosting type 1a supernovae. Instrument used is MUSE on the VLT. The target for our study is SN2005hc host galaxy. The data here is in the form of FITS file which consists of 3d data cube containing both spatial and spectral information.\nMethodology The artificial redshifting algorithm implemented follows the FERENGI approach to simulate how nearby galaxies would appear at higher redshifts as described in the paper by A. Paulino-Afonso et al., 2022:\nStep 1: Redshift Selection Selected target redshifts: z = 0.3, 0.8, and 1.3\nStep 2: Transformations Applied Three major transformations were performed:\nCosmological Dimming Applied a flux dimming factor proportional to:\nSpatial Scaling Used the FREBIN 2D algorithm to resample each 2D wavelength slice, scaling to match the pixel scale at higher redshift. This preserves both:\nPhysical size (via angular diameter distance) Total flux (via luminosity distance) Luminosity Evolution Applied an evolution factor to account for the average evolution in brightness across different redshifts. This effect also accounts for the reduced observed flux due to increasing distance and redshift as outlined by A. Paulino-Afonso et al., 2016.\nResults The above images illustrate how galaxy appearance changes with increasing redshift. As redshift increases, in the cosmological dimming effect we observe a reduction in flux, especially in the outer regions of galaxies. While the scaling effect shows no apparent flux loss, the intrinsic luminosity evolution shows the change in intrinsic brightness of galaxies. Combining these effects, the images show galaxies appearing smaller and dimmer at higher redshifts, with noticeable flux loss from their outskirts.\rComparing with the spectral graph at z = 0, we observe that from z = 0.3 to z = 1.3, the dimming effect reduces the observed flux by approximately two orders of magnitude. However, under the scaling effect, the flux appears to be preserved across different redshifts at longer wavelengths. This suggests that as we move to higher redshift values, the flux of galaxies can be recovered to its intrinsic value. In the case of luminosity evolution, flux increases with redshift due to changes in the intrinsic brightness of galaxies. When combined, these effects result in a slight increase in observed flux, explained by the overlap between luminosity evolution and cosmological dimming.\rView my Jupyter Notebook for the full implementation of the work.\n",
+  "wordCount" : "605",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/blog/iastro/cover.png","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/research/iastro/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anisha Khatri",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header sticky-header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anisha Khatri (Alt + H)">Anisha Khatri</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/research" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/cv" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about-me" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/research/">Researches</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Local galaxies as time machines: Navigating biases in studying Cosmic Evolution
+    </h1>
+    <div class="post-description">
+      Using galaxies as probes to investigate the observational biases that affect the estimation of physical parameters (e.g., stellar masses) in galaxies.
+    </div>
+    <div class="post-meta">
+
+
+July 2023
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/blog/iastro/cover.png" alt="">
+        
+</figure>
+  <div class="post-content"><h1 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h1>
+<p><strong>Supervisor:</strong> <strong>Ana S. Paulino Afonso</strong> (Researcher, Instituto de Astrofísica e Ciências do Espaço, Portugal)</p>
+<p>This project was undertaken as part of a summer research internship at <a href="https://www.iastro.pt/" target="_blank" style="text-decoration: none;"> the Instituto de Astrofísica e Ciências do Espaço (<strong>IAstro</strong>)
+</a>, Portugal. During this internship, I have simulated and applied the transformation effects: <strong>Cosmological dimming</strong>, <strong>scaling</strong> and modelling of <strong>luminosity evolution</strong> to the host galaxy <strong>SN2005hc</strong> at three different values of redshift using the artificial redshifting algorithm (<strong>FERENGI</strong>).
+<br>
+<br>
+The main project aim was to investigate the observational biases that influence the estimation of physical parameters such as Star Formation Rate, Stellar Mass in galaxies.</p>
+<h1 id="why-do-we-need-to-examine-the-biases">Why do we need to examine the biases?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-need-to-examine-the-biases">#</a></h1>
+<p>The motivation behind this project stems from the fact that galaxies tend to appear increasingly <strong>irregular</strong> at higher redshifts. However, to make meaningful comparisons between galaxy populations across different cosmic epochs, it&rsquo;s essential to account for various <strong>observational</strong> limitations. These include selection and instrumental biases as well as cosmological effects. For example, the surface brightness dimming effect impacts the flux of the galaxy by two orders of magnitude from z=0 to z=2. This strongly effects the galaxy morphological studies.</p>
+<figure>
+  <img src="/blog/iastro/image_.png" alt="Hubble Ultra Deep Field" style="width:100%;">
+  <figcaption style="font-size: 0.9em; text-align: center;">
+    Nearly 10,000 galaxies captured in the Hubble Ultra Deep Field, revealing 13 billion years of cosmic history.  
+    <br>
+    <a href="https://science.nasa.gov/universe/galaxies/evolution/" target="_blank" rel="noopener">Credits: NASA, ESA, STScI & HUDF Team</a>
+  </figcaption>
+</figure>
+<h1 id="data-source">Data Source<a hidden class="anchor" aria-hidden="true" href="#data-source">#</a></h1>
+<p>The data used is acquired from the <strong>amusing survey</strong> which focuses on the galaxies hosting type 1a supernovae. Instrument used is MUSE on the VLT. The target for our study is SN2005hc host galaxy. The data here is in the form of <strong>FITS</strong> file which consists of 3d data cube containing both spatial and spectral information.</p>
+<div style="display: flex; justify-content: space-between; gap: 40px;">
+  <img src="/blog/iastro/image1.png" style="width: 50%;">
+  <img src="/blog/iastro/image2.png" style="width: 60%;">
+</div>
+<h1 id="methodology">Methodology<a hidden class="anchor" aria-hidden="true" href="#methodology">#</a></h1>
+<p>The artificial redshifting algorithm implemented follows the <strong>FERENGI</strong> approach to simulate how nearby galaxies would appear at higher redshifts as described in the paper by
+<a href="https://arxiv.org/abs/2202.04078" target="_blank" style="text-decoration: none;">A. Paulino-Afonso et al., 2022</a>:</p>
+<h3 id="step-1-redshift-selection">Step 1: Redshift Selection<a hidden class="anchor" aria-hidden="true" href="#step-1-redshift-selection">#</a></h3>
+<p>Selected target redshifts: <strong>z = 0.3</strong>, <strong>0.8</strong>, and <strong>1.3</strong></p>
+<h3 id="step-2-transformations-applied">Step 2: Transformations Applied<a hidden class="anchor" aria-hidden="true" href="#step-2-transformations-applied">#</a></h3>
+<p>Three major transformations were performed:</p>
+<ol>
+<li>
+<p><strong>Cosmological Dimming</strong> <br>
+Applied a flux dimming factor proportional to:</p>
+<div style="display: flex; justify-content: flex-start; gap: 10px; margin-top: 8px; margin-bottom: 16px;">
+  <img src="/blog/iastro/flux.png" style="width: 60%;">
+</div>
+</li>
+<li>
+<p><strong>Spatial Scaling</strong> <br>
+Used the <strong>FREBIN 2D</strong> algorithm to resample each 2D wavelength slice, scaling to match the pixel scale at higher redshift. This preserves both:</p>
+<ul>
+<li><strong>Physical size</strong> (via angular diameter distance)</li>
+<li><strong>Total flux</strong> (via luminosity distance)</li>
+</ul>
+</li>
+<li>
+<p><strong>Luminosity Evolution</strong> <br>
+Applied an evolution factor to account for the average evolution in brightness across different redshifts. This effect also accounts for the reduced observed flux due to increasing distance and redshift as outlined by <a href="https://arxiv.org/pdf/1611.05039" target="_blank" style="text-decoration: none;">A. Paulino-Afonso et al., 2016</a>.</p>
+<div style="display: flex; justify-content: center; margin-top: 12px;">
+  <img src="/blog/iastro/lum2.png" style="width: 50%; max-width: 500px;">
+</div>
+</li>
+</ol>
+<h1 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h1>
+<br>
+<br>
+<!-- Flex container for the two columns -->
+<div style="display: flex; flex-wrap: wrap; gap: 90px; justify-content: center;">
+  <!-- Left column -->
+  <div style="flex: 1; min-width: 300px; text-align: center;">
+    <img src="/blog/iastro/image1.png" 
+         style="width: 70%; max-width: 400px; display: block; margin: 0 auto 60px;">
+<p><img src="/blog/iastro/image5.png" 
+style="width: 120%; max-width: 500px;"></p>
+  </div>
+  <!-- Right column -->
+  <div style="flex: 2; min-width: 200px; text-align: center;">
+    <img src="/blog/iastro/cover.png" 
+         style="width: 155%; max-width: 900px;">
+  </div>
+</div>
+<br>
+<p style="font-size: 1em; margin-top: 4px; width: 130%; text-align: justify;">
+The above images illustrate how galaxy appearance changes with increasing redshift. As redshift increases, in the <strong>cosmological dimming effect</strong> we observe a reduction in flux, especially in the outer regions of galaxies. While the <strong>scaling effect</strong> shows no apparent flux loss, the intrinsic <strong>luminosity evolution</strong> shows the change in intrinsic brightness of galaxies. Combining these effects, the images show galaxies appearing smaller and dimmer at higher redshifts, with noticeable flux loss from their outskirts.
+</p>
+<br>
+<!-- Flex container for the two columns -->
+<div style="display: flex; flex-wrap: wrap; gap: 60px; justify-content: center;">
+  <!-- Left column -->
+  <div style="flex: 1; min-width: 300px; text-align: center;">
+    <img src="/blog/iastro/image2.png" 
+         style="width: 70%; max-width: 400px; display: block; margin: 0 auto 40px;">
+<p><img src="/blog/iastro/image6.png" 
+style="width: 110%; max-width: 500px;"></p>
+  </div>
+  <!-- Right column -->
+  <div style="flex: 2; min-width: 200px; text-align: center;">
+    <img src="/blog/iastro/image3.png" 
+         style="width: 210%; max-width: 900px;">
+  </div>
+</div>
+<br>
+<p style="font-size: 1em; margin-top: 4px; width: 130%; text-align: justify;">
+  Comparing with the spectral graph at z = 0, we observe that from z = 0.3 to z = 1.3, the <strong>dimming effect</strong> reduces the observed flux by approximately two orders of magnitude. However, under the <strong>scaling effect</strong>, the flux appears to be preserved across different redshifts at longer wavelengths. This suggests that as we move to higher redshift values, the flux of galaxies can be recovered to its intrinsic value. In the case of <strong>luminosity evolution</strong>, flux increases with redshift due to changes in the intrinsic brightness of galaxies. When <strong>combined</strong>, these effects result in a slight increase in observed flux, explained by the overlap between luminosity evolution and cosmological dimming.
+</p>
+<br>
+<p>View my <a href="https://github.com/asofiafonso/local-galaxies2023/blob/main/IASTRO-%20Combined%20Effects.ipynb">Jupyter Notebook</a> for the full implementation of the work.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/galaxies/">Galaxies</a></li>
+      <li><a href="http://localhost:1313/tags/galaxy-evolution/">Galaxy Evolution</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/astropy/">Astropy</a></li>
+      <li><a href="http://localhost:1313/tags/data-analysis/">Data Analysis</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 <a href="http://localhost:1313/">Anisha Khatri</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

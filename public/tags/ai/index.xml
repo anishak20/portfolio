@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AI on Anisha Khatri</title>
+    <link>http://localhost:1313/tags/ai/</link>
+    <description>Recent content in AI on Anisha Khatri</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flavor Physics: Precision Measurements of CKM Matrix elements</title>
+      <link>http://localhost:1313/research/face-landmarks-detection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/face-landmarks-detection/</guid>
+      <description>To extract the CKM matrix element V₍ub₎, the shape parameter α, the form factor normalization f₊(0), and their associated uncertainties for precision flavor physics measurements.</description>
+    </item>
+    <item>
+      <title>Face Landmarks Detection using CNN</title>
+      <link>http://localhost:1313/projects/face-landmarks-detection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/face-landmarks-detection/</guid>
+      <description>Can computers really understand the human face?</description>
+    </item>
+    <item>
+      <title>Gaze-tracking Goggles</title>
+      <link>http://localhost:1313/projects/gaze-tracking-goggles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/gaze-tracking-goggles/</guid>
+      <description>Smart Goggles for Gaze Analysis</description>
+    </item>
+  </channel>
+</rss>
