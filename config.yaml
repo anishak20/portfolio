@@ -1,4 +1,4 @@
-baseURL: "https://arkalim.netlify.app"
+baseURL: "https://anishakhatri20.netlify.app"
 languageCode: en-us
 title: Anisha Khatri
 theme: PaperMod
@@ -113,3 +113,4 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
