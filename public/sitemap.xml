@@ -2,25 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/research/aws-dva-certification/</loc>
+    <loc>http://localhost:1313/research/ngc4147/</loc>
   </url><url>
-    <loc>http://localhost:1313/research/face-dataset-compression/</loc>
+    <loc>http://localhost:1313/research/iastro/</loc>
   </url><url>
-    <loc>http://localhost:1313/research/aws-saa-certification/</loc>
+    <loc>http://localhost:1313/research/thesis/</loc>
   </url><url>
-    <loc>http://localhost:1313/research/face-landmarks-detection/</loc>
+    <loc>http://localhost:1313/research/reyes/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/automated-image-captioning/</loc>
+    <loc>http://localhost:1313/projects/grbs/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/face-landmarks-detection/</loc>
-  </url><url>
-    <loc>http://localhost:1313/projects/gaze-tracking-goggles/</loc>
+    <loc>http://localhost:1313/projects/isingmodel/</loc>
   </url><url>
     <loc>http://localhost:1313/about-me/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/age/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
   </url><url>
@@ -28,13 +24,13 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/computer-vision/</loc>
+    <loc>http://localhost:1313/tags/chi-square/</loc>
   </url><url>
     <loc>http://localhost:1313/cv/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/data-analysis/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/dl/</loc>
+    <loc>http://localhost:1313/tags/flavor-physics/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/gaia/</loc>
   </url><url>
@@ -48,7 +44,15 @@
   </url><url>
     <loc>http://localhost:1313/tags/grbs/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/markov-chains/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/mcmc/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/metallicity/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/metropolis-hastings/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/monte-carlo/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/neutron-stars/</loc>
   </url><url>
@@ -60,8 +64,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/pytorch/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/qcd/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/qgp/</loc>
@@ -72,6 +74,10 @@
   </url><url>
     <loc>http://localhost:1313/tags/statistical-analysis/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/statistical-physics/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/vub/</loc>
   </url>
 </urlset>

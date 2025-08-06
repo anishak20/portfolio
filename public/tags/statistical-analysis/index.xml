@@ -9,9 +9,9 @@
     <atom:link href="http://localhost:1313/tags/statistical-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spectral lag in gamma-ray bursts</title>
-      <link>http://localhost:1313/projects/automated-image-captioning/</link>
+      <link>http://localhost:1313/projects/grbs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/automated-image-captioning/</guid>
+      <guid>http://localhost:1313/projects/grbs/</guid>
       <description>Estimating the spectral lag in gamma ray bursts to understand its emission mechanism</description>
     </item>
   </channel>
