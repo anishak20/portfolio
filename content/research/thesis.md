@@ -63,7 +63,7 @@ The nature of the graphs indicates a continuous, smooth second-order phase trans
 
   <a href="https://drive.google.com/file/d/1G-Ww_Pvn-I0Jd1doXdVe5DYmvnPAvA-U/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration: none;">
     <button style="width: 100%; padding: 14px 24px; font-size: 16px; background-color: #007acc; color: white; border: none; border-radius: 6px; cursor: pointer;">
-      Project Report
+      Thesis Report
     </button>
   </a>
 
