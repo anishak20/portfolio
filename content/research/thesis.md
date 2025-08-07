@@ -61,7 +61,7 @@ The nature of the graphs indicates a continuous, smooth second-order phase trans
 
 <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
 
-  <a href="https://github.com/anishak20/Master-Thesis/blob/main/Thesis%20Report/Dissertation_Sem_III%20(6).pdf" target="_blank" rel="noopener" style="text-decoration: none;">
+  <a href="https://drive.google.com/file/d/1G-Ww_Pvn-I0Jd1doXdVe5DYmvnPAvA-U/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration: none;">
     <button style="width: 100%; padding: 14px 24px; font-size: 16px; background-color: #007acc; color: white; border: none; border-radius: 6px; cursor: pointer;">
       Project Report
     </button>
