@@ -61,7 +61,7 @@ url: "/cv"
     <p><strong>Role:</strong> Technical Head &middot; <em>Aug 2021 &ndash; July 2022</em></p>
     <ul>
       <li>Organized competitions and led creation of informational posts on electronic waste in India.</li>
-      <li>Initiated and managed an e-waste collection drive, gathering <strong>50&nbsp;kg</strong> from campus and nearby regions, in collaboration with <strong>SU-VIKAS</strong> for safe disposal.</li>
+      <li>Led an <strong> e-waste collection drive </strong> across campus and nearby areas, gathering 50 kg of electronic waste, and collaborated with NGO SU-VIKAS to ensure safe and compliant disposal.</li>
     </ul>
   </article>
 
