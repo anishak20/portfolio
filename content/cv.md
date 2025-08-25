@@ -47,7 +47,7 @@ url: "/cv"
   ## Outreach & Activities
 
   <article>
-    ### Department of Physics, SRCASW, University of Delhi
+    <h3> Department of Physics, SRCASW, University of Delhi </h3>
     <p><strong>Role:</strong> Cultural Secretary &middot; <em>Aug 2021 &ndash; Aug 2022</em></p>
     <ul>
       <li>Coordinated lectures by renowned professors and organized the annual technical festival <strong>TRAP&rsquo;22</strong>, engaging ~200 participants.</li>
@@ -57,7 +57,7 @@ url: "/cv"
   </article>
 
   <article>
-    ### E-Waste Society, Department of Physics
+    <h3> E-Waste Society, Department of Physics </h3>
     <p><strong>Role:</strong> Technical Head &middot; <em>Aug 2021 &ndash; July 2022</em></p>
     <ul>
       <li>Organized competitions and led creation of informational posts on electronic waste in India.</li>
@@ -66,7 +66,7 @@ url: "/cv"
   </article>
 
   <article>
-    ### Enactus, SRCASW, University of Delhi
+    <h3> Enactus, SRCASW, University of Delhi </h3>
     <p><strong>Role:</strong> Council Head, Graphics Department &middot; <em>Sept 2021 &ndash; Sept 2022</em></p>
     <ul>
       <li>Directed a <strong>team of 8</strong> to design social media posts, posters, and videos highlighting social entrepreneurship projects undertaken by Enactus Shaheed Rajguru.</li>
@@ -75,7 +75,7 @@ url: "/cv"
   </article>
 
   <article>
-    ### Institution&rsquo;s Innovation Council, SRCASW, University of Delhi
+    <h3> Institution&rsquo;s Innovation Council, SRCASW, University of Delhi </h3>
     <p><strong>Role:</strong> IPR Coordinator &amp; Core Team Member &middot; <em>July 2021 &ndash; July 2022</em></p>
     <ul>
       <li>Conducted webinars and competitions promoting awareness about the significance of <strong>Intellectual Property Rights (IPR)</strong> in science, innovation, and entrepreneurship, with participants from India and abroad.</li>
@@ -84,7 +84,7 @@ url: "/cv"
   </article>
 
   <article>
-    ### Indian Space Society (Startup)
+    <h3> Indian Space Society (Startup) </h3>
     <p><strong>Role:</strong> Outreach &amp; Marketing Intern &middot; <em>Jan &ndash; Feb 2021</em></p>
     <ul>
       <li>Designed and executed digital and social media campaigns to increase public engagement with space science programs in India.</li>
