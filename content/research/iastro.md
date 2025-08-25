@@ -46,7 +46,7 @@ The data used is acquired from the **amusing survey** which focuses on the galax
 
 # Methodology
 
-The artificial redshifting algorithm implemented follows the **FERENGI** approach to simulate how nearby galaxies would appear at higher redshifts as described in the paper by
+The artificial redshifting algorithm implemented follows the **FERENGI** approach to simulate how nearby galaxies would appear at higher redshifts as described in the paper
 <a href="https://arxiv.org/abs/2202.04078" target="_blank" style="text-decoration: none;">A. Paulino-Afonso et al., 2022</a>:
 
 ### Step 1: Redshift Selection
@@ -70,7 +70,7 @@ Three major transformations were performed:
    * **Total flux** (via luminosity distance)
 
 3. **Luminosity Evolution** <br>
-   Applied an evolution factor to account for the average evolution in brightness across different redshifts. This effect also accounts for the reduced observed flux due to increasing distance and redshift as outlined by <a href="https://arxiv.org/pdf/1611.05039" target="_blank" style="text-decoration: none;">A. Paulino-Afonso et al., 2016</a>.
+   Applied an evolution factor to account for the average evolution in brightness across different redshifts. This effect also accounts for the reduced observed flux due to increasing distance and redshift as outlined in <a href="https://arxiv.org/pdf/1611.05039" target="_blank" style="text-decoration: none;">A. Paulino-Afonso et al., 2016</a>.
 
    <div style="display: flex; justify-content: center; margin-top: 12px;">
      <img src="/blog/iastro/lum2.png" style="width: 50%; max-width: 500px;">
