@@ -43,24 +43,56 @@ url: "/cv"
 * Feb 2023: Asian Winter School on Astronomy and Astrophysics, Department of Astronomical Science, Sokendai Japan
 * Feb 2023: Quantum Winter School, Qubit by Qubit with Microsoft Azure Quantum 
 
-## Outreach & Activities
 
-<p><strong>&bull;</strong> Initiated and led an electronic-waste collection drive, covering both the college campus and surrounding areas. Successfully collected <strong>50 kilograms</strong> of e-waste and collaborated with the NGO <strong>SU-VIKAS</strong> to ensure environmentally safe disposal practices. <em>(Oct 2021, New Delhi)</em></p>
+  ## Outreach & Activities
 
-<p><strong>&bull;</strong> Conceptualized and organized several competitions and awareness initiatives focused on <strong>electronic waste management</strong> in India, aimed at sensitizing the student community. <em>(Aug 2021 – July 2022)</em></p>
+  <article>
+    <h3>Department of Physics, SRCASW, University of Delhi</h3>
+    <p><strong>Role:</strong> Cultural Secretary &middot; <em>Aug 2021 &ndash; Aug 2022</em></p>
+    <ul>
+      <li>Coordinated lectures by renowned professors and organized the annual technical festival <strong>TRAP&rsquo;22</strong>, engaging ~200 participants.</li>
+      <li>Expanded departmental outreach by ~70% through social media initiatives.</li>
+      <li>Managed a <strong>40-member team</strong> to run Freshers&rsquo; and Farewell events, year-round activities, and launched the departmental magazine.</li>
+    </ul>
+  </article>
 
-<p><strong>&bull;</strong> Organized lectures by renowned Physics Professors and co-led the annual science-based technical festival <strong>TRAP’22</strong> in the <strong>Department of Physics</strong>. <em>(Jan 2022, New Delhi)</em></p>
+  <article>
+    <h3>E-Waste Society, Department of Physics</h3>
+    <p><strong>Role:</strong> Technical Head &middot; <em>Aug 2021 &ndash; July 2022</em></p>
+    <ul>
+      <li>Organized competitions and led creation of informational posts on electronic waste in India.</li>
+      <li>Initiated and managed an e-waste collection drive, gathering <strong>50&nbsp;kg</strong> from campus and nearby regions, in collaboration with <strong>SU-VIKAS</strong> for safe disposal.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Enactus, SRCASW, University of Delhi</h3>
+    <p><strong>Role:</strong> Council Head, Graphics Department &middot; <em>Sept 2021 &ndash; Sept 2022</em></p>
+    <ul>
+      <li>Directed a <strong>team of 8</strong> to design social media posts, posters, and videos highlighting social entrepreneurship projects undertaken by Enactus Shaheed Rajguru.</li>
+      <li>Played an active role in organizing the college&rsquo;s first-ever <strong>PAN-India Conclave</strong>, facilitating national-level academic and professional exchange.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Institution&rsquo;s Innovation Council, SRCASW, University of Delhi</h3>
+    <p><strong>Role:</strong> IPR Coordinator &amp; Core Team Member &middot; <em>July 2021 &ndash; July 2022</em></p>
+    <ul>
+      <li>Conducted webinars and competitions promoting awareness about the significance of <strong>Intellectual Property Rights (IPR)</strong> in science, innovation, and entrepreneurship, with participants from India and abroad.</li>
+      <li>Led a <strong>5-member team</strong> to run social media campaigns promoting IPR literacy among students and young innovators.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Indian Space Society (Startup)</h3>
+    <p><strong>Role:</strong> Outreach &amp; Marketing Intern &middot; <em>Jan &ndash; Feb 2021</em></p>
+    <ul>
+      <li>Designed and executed digital and social media campaigns to increase public engagement with space science programs in India.</li>
+      <li>Contributed to marketing strategies for promoting nationwide space-related initiatives.</li>
+    </ul>
+  </article>
 
 
-<p><strong>&bull;</strong> Developed digital outreach content—social media posts, posters, and videos—highlighting social entrepreneurship projects under <strong>Enactus Shaheed Rajguru</strong>. Oversaw a team of <strong>8 members</strong> to execute strategic content dissemination. <em>(Sept 2021 – Sept 2022, New Delhi)</em></p>
-
-<p><strong>&bull;</strong> Played an integral role in organizing the <strong>first-ever PAN-India Conclave</strong> hosted by the college, facilitating national-level academic and professional exchange. <em>(March 2022, New Delhi)</em></p>
-
-<p><strong>&bull;</strong> Conducted a series of webinars and competitions aimed at increasing awareness around the significance of <strong>Intellectual Property Rights (IPR)</strong> in entrepreneurship, science, and innovation.  <em>(Sept 2021, New Delhi)</em></p>
-
-<p><strong>&bull;</strong> Led a team of <strong>5 members</strong> to create and manage social media campaigns promoting the value of <strong>IPR literacy</strong> among young innovators and students. <em>(July 2021 – July 2022)</em></p>
-
-<p><strong>&bull;</strong> Worked with the startup <strong>Indian Space Society</strong>, contributing to a marketing strategy aimed at promoting space science programs in India. Designed and executed outreach initiatives through <strong>digital and social media campaigns</strong> to increase public engagement with space-related content.<em> (Jan – Feb 2021)</em></p>
 
 
 
