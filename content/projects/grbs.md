@@ -273,6 +273,6 @@ Energy bands:
 
 
 ## Discussion
-A **negative spectral lag** was observed for **GRB 240825A**. Negative spectral lag in GRBs, though rare, can arise from inverse Compton up-scattering of soft photons by a surrounding hot electron medium. A notable difference exists between the spectral lag values obtained from the peak of the CCF and from Gaussian fitting. This discrepancy suggests that the CCF may follow a **Lorentzian** profile rather than a **Gaussian** one. 
+A **negative spectral lag** was observed for **GRB 240825A**. Negative spectral lag in GRBs, though rare, can arise from inverse Compton up-scattering of soft photons by a surrounding hot electron medium. A notable difference exists between the spectral lag values obtained from the peak of the CCF and from Gaussian fitting. This discrepancy suggests that the CCF may follow an **Asymmetric Gaussian** profile rather than a **Gaussian** one. 
 
-To address this, I’m currently working on fitting a Lorentzian function to the CCF, which I believe may yield a more accurate estimate of the lag. Further improvements and analysis are ongoing to refine the results.
+To address this, I’m currently fitting an asymmetric gaussian to the CCF, which may provide a more accurate estimate of the spectral lag. In addition, I am also investigating the lag–luminosity relation. Further improvements and analysis are ongoing to refine the results.
