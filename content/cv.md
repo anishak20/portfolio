@@ -7,7 +7,7 @@ url: "/cv"
 #description: ""
 ---
 <p>
-  <a href="https://drive.google.com/file/d/1dzXoobquXvgcFaPhZPd8ZL9LTr82SPv1/view?usp=sharing" target="_blank">
+  <a href="https://drive.google.com/file/d/1GTCEih3IqAcAYIeRW-hg8bgwy8oPNqmD/view?usp=sharing" target="_blank">
     Download my CV
   </a>
   in PDF format.
