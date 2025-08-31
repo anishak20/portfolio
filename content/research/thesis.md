@@ -53,7 +53,7 @@ Hence, these are numerically computed for a range of temperatures at chemical po
   <img src="/blog/thesis/plots.png" style="max-width: 120%; height: auto;">
 </div>
 
-The nature of the graphs indicates a continuous, smooth second-order phase transition of the matter. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This indicates that at sufficiently high densities and temperatures, neutron star matter may deconfine into a soup of quark-gluon plasma.
+The nature of the graphs indicates a continuous, smooth second-order phase transition of the matter. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This suggests that DDQM Model despite being a phenomenological approach agrees with the numerical results from lattice QCD. Hence, DDQM Model is a reasonable approximation for describing the EoS of QGP at high temperatures and high densities conditions that are present inside a neutron star.
 
 <div style="display: flex; justify-content: center; margin: 10px 0;">
   <img src="/blog/thesis/cs2.png" style="max-width: 60%; height: auto;">
