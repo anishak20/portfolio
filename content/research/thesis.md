@@ -17,9 +17,9 @@ In this study, I conducted an in depth literature review of **Quantum Chromodyna
 
 ## Density-Dependent Quark Mass Model
 
-Quark matter in the cores of neutron stars is expected to exist in the form of **quark-gluon plasma** (QGP). It is referred as strange quark matter (SQM). The study of QGP requires non-perturbative QCD, and one approach involves using phenomenological models such as the bag model.
+Quark matter in the cores of neutron stars is expected to exist in the form of **quark-gluon plasma** (QGP). It is referred as strange quark matter (SQM). The study of QGP requires non-perturbative QCD, and one approach involves using phenomenological models such as the Bag model.
 
-We have extended the MIT Bag Model to the Density Dependent Quark Mass Model where the quark masses are parametrized as functions of the baryon density as mentioned in [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
+An alternative to the MIT Bag model is the Density Dependent Quark Mass Model where the quark masses are parametrized as functions of the baryon density as mentioned in [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
 
 <div style="display: flex; justify-content: center; margin: 10px 0;">
   <img src="/blog/thesis/mass.png" style="max-width: 100%; height: auto;">
@@ -55,7 +55,7 @@ Hence, these are numerically computed for a range of temperatures at chemical po
   <img src="/blog/thesis/plots.png" style="max-width: 120%; height: auto;">
 </div>
 
-The nature of the graphs indicates a continuous, smooth second-order phase transition of the matter. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This suggests that DDQM Model despite being a phenomenological approach agrees with the numerical results from lattice QCD. Hence, DDQM Model is a reasonable approximation for describing the EoS of QGP at high temperatures and high densities conditions that are present inside a neutron star.
+The nature of the entropy density plot indicates a continuous, smooth second-order transition from the hadronic phase to the deconfined phase of quarks and gluons. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This suggests that DDQM Model despite being a phenomenological approach agrees with the numerical results from lattice QCD. Hence, DDQM Model is a reasonable approximation for describing the EoS of QGP at high temperature and high density conditions that are present inside a neutron star.
 
 <div style="display: flex; justify-content: center; margin: 10px 0;">
   <img src="/blog/thesis/cs2.png" style="max-width: 60%; height: auto;">
