@@ -17,7 +17,9 @@ In this study, I conducted an in depth literature review of **Quantum Chromodyna
 
 ## Density-Dependent Quark Mass Model
 
-Quark matter in the cores of neutron stars is expected to exist in the form of **quark-gluon plasma** (QGP). It is referred as strange quark matter (SQM). The quark masses are parametrized as functions of the baryon density as mentioned in [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
+Quark matter in the cores of neutron stars is expected to exist in the form of **quark-gluon plasma** (QGP). It is referred as strange quark matter (SQM). To study QGP, we use non perturbative QCD. One of the ways to study this is by using phenomenological models like the bag model.
+
+We have extended the MIT Bag Model to the Density dependent Quark Mass Model. The quark masses are parametrized as functions of the baryon density as mentioned in [Anand et al., 2000](https://iopscience.iop.org/article/10.1086/309144):
 
 <div style="display: flex; justify-content: center; margin: 10px 0;">
   <img src="/blog/thesis/mass.png" style="max-width: 100%; height: auto;">
