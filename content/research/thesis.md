@@ -55,7 +55,9 @@ Hence, these are numerically computed for a range of temperatures at chemical po
   <img src="/blog/thesis/plots.png" style="max-width: 120%; height: auto;">
 </div>
 
-The nature of the entropy density plot indicates a continuous, smooth second-order transition from the hadronic phase to the deconfined phase of quarks and gluons. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This suggests that DDQM Model despite being a phenomenological approach agrees with the numerical results from lattice QCD. Hence, DDQM Model is a reasonable approximation for describing the EoS of QGP at high temperature and high density conditions that are present inside a neutron star.
+The nature of the entropy density plot indicates a continuous, smooth second-order transition from the hadronic phase to the deconfined phase of quarks and gluons. Furthermore, the **speed of sound** was computed and compared with both lattice and curvature data, showing consistency at higher temperatures. This suggests that DDQM Model despite being a phenomenological approach agrees with the numerical results from lattice QCD. 
+
+Hence, DDQM Model is a reasonable approximation for describing the EoS of QGP at high temperature and high density conditions that are present inside a neutron star.
 
 <div style="display: flex; justify-content: center; margin: 10px 0;">
   <img src="/blog/thesis/cs2.png" style="max-width: 60%; height: auto;">
