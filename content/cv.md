@@ -34,6 +34,7 @@ url: "/cv"
 
 ## Schools & Workshops
 
+* September 2025: International Conference on Quantum Science and Gravitational Waves, JECRC University, Jaipur, India
 * May 2025: Aries Training School in Observational Astronomy and Atmospheric Sciences, Nainital, India
 * July 2024: Sagan Summer Workshop, Caltech, USA
 * July 2024: Astronomy Bootcamp, Nehru Planetarium, New Delhi, India
