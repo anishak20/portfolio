@@ -20,7 +20,8 @@ url: "/cv"
 **Supervisor:** <a href="https://www.researchgate.net/profile/S-Singh-19" target="_blank"> Prof. S. Somorendro Singh</a>
 
 **June 2023:** Bachelor of Science (honors) in Physics, University of Delhi<br>
-**Relevant Coursework**: Linear Algebra, Differential Equations, Numerical Methods, Advanced Mathematical Physics, Nuclear and Particle Physics, Quantum Mechanics
+**Minor degree:** Mathematics
+<!-- **Relevant Coursework**: Linear Algebra, Differential Equations, Numerical Methods, Advanced Mathematical Physics, Nuclear and Particle Physics, Quantum Mechanics -->
 
 ## Talks, Proceedings & Posters
 
