@@ -103,7 +103,7 @@ url: "/cv"
 ## Coursework
 
 My Master's Coursework: 
-* **Core courses**: Mathematical Physics, Quantum Mechanics 1 and 2, Statistical Physics, Classical Mechanics, Solid State Physics, Electromagnetic Theory and Electrodynamics, Nuclear and Particle Physics, Atomic and Molecular Physics, Computational Physics Lab
+* **Core courses**: Mathematical Physics, Quantum Mechanics 1 and 2, Statistical Physics, Classical Mechanics, Solid State Physics, Electromagnetic Theory and Electrodynamics, Nuclear and Particle Physics, Atomic and Molecular Physics, Electronics, Computational Physics Lab
 * **Specialisation**: Astrophysics, General Theory of Relativity and Cosmology
 * **Discipline specific electives**: Astrophysics 1 and 2, GTR & Cosmology 1 & 2, Observational Astronomy Lab, Dissertation 
 
