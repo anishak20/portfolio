@@ -36,6 +36,7 @@ url: "/cv"
 ## Schools & Workshops
 
 * October 2025: 11th Annual BRICS Astronomy Working Group (BAWG) Workshop 2025, National Institute for Space Research, São José dos Campos, SP, Brazil. (Remote)
+* October 2025: International Conference on Frontiers of Cosmology, Astrophysics and Particle Physics, Department of Physics, The IFCAI University, Tripura, India
 * September 2025: International Conference on Quantum Science and Gravitational Waves, JECRC University, Jaipur, India
 * May 2025: Aries Training School in Observational Astronomy and Atmospheric Sciences, Nainital, India
 * July 2024: Sagan Summer Workshop, Caltech, USA (Remote)
