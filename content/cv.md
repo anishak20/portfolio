@@ -25,7 +25,7 @@ url: "/cv"
 
 ## Talks, Proceedings & Posters
 
-* **Talk:** 'Neutron star as a signal for QGP formation' at  <a href = "https://indico.cern.ch/event/1539849/overview" target="_blank"> QCD at the Extremes</a> 2025, International Online Workshop conducted by the organisers from CERN, Switzerland (Sept 2025)
+* **Talk, Proceeding:** 'Neutron star as a signal for QGP formation' at  <a href = "https://indico.cern.ch/event/1539849/overview" target="_blank"> QCD at the Extremes</a> 2025, International Online Workshop conducted by the organisers from CERN, Switzerland (Sept 2025)
 * **Talk:** 'Spectral lags in gamma-ray bursts' at ARIES Training School in Observational Astronomy & Atmospheric Sciences, ARIES Nainital, India (May 2025)
 * **Talk:** 'Study of age, metallicity and extra-tidal region of globular cluster NGC 4147', Coursework (April 2025), Observational Astronomy lab, Department of Physics and Astrophysics, University of Delhi, India
 * **Talk:** 'Neutron star as a signal for quark-gluon plasma formation', Dissertation (Jan 2025), Department of Physics and Astrophysics, University of Delhi, India

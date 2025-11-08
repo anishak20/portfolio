@@ -189,7 +189,7 @@ the **symmetry breaking**.
 
 <br>
 <p>
-In addition to exhibiting a second-order phase transition, the Ising model is also an ideal system for studying <strong>ergodicity breaking</strong> — the transition in which the system loses its ability to explore the entire configuration space.
+In addition to exhibiting a second-order phase transition, the Ising model is also an ideal system for studying <strong>ergodicity breaking</strong> - the transition in which the system loses its ability to explore the entire configuration space.
 </p>
 <br>
 <p>
@@ -234,7 +234,7 @@ The top row displays the <strong>magnetization per spin</strong> as a function o
   <br>
   <li>
     <strong>For T &asymp; T<sub>c</sub> , &beta; = 0.44</strong>:<br>
-    Near the critical temperature, the magnetization exhibits long-lived excursions between positive and negative states. The histogram becomes <strong>bimodal</strong>, indicating two competing phases. The system starts to show <strong>partial ergodicity breaking</strong> due to critical slowing down — transitions between phases are rare but still occur.
+    Near the critical temperature, the magnetization exhibits long-lived excursions between positive and negative states. The histogram becomes <strong>bimodal</strong>, indicating two competing phases. The system starts to show <strong>partial ergodicity breaking</strong> due to critical slowing down - transitions between phases are rare but still occur.
   </li>
   <br>
   <li>
