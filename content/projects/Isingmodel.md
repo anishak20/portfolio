@@ -43,7 +43,7 @@ A system of two spins is considered to be in a <strong>lower-energy state</stron
 
 <br>
 <p>
-A <strong>phase transition</strong> in the context of the Ising model refers to the transition from an <strong>ordered state</strong> to a <strong>disordered state</strong>. Above the <strong>critical temperature</strong> (<strong>T<sub>c</sub></strong>), a ferromagnet is in a disordered phase, which corresponds to a random distribution of spin values. Below <strong>T<sub>c</sub></strong>, the system becomes ordered — nearly all spins align, even in the absence of an external magnetic field <strong>H</strong>.
+A <strong>phase transition</strong> in the context of the Ising model refers to the transition from an <strong>ordered state</strong> to a <strong>disordered state</strong>. Above the <strong>critical temperature</strong> (<strong>T<sub>c</sub></strong>), a ferromagnet is in a disordered phase, which corresponds to a random distribution of spin values. Below <strong>T<sub>c</sub></strong>, the system becomes ordered - nearly all spins align, even in the absence of an external magnetic field <strong>H</strong>.
 </p>
 
 <p>
@@ -53,7 +53,7 @@ When a cooled ferromagnet is heated back up, the net magnetization vanishes at <
 # 2D Ising Model
 
 <p>
-We consider a 2-dimensional nearest-neighbour Ising Model with:
+We consider a 2-dimensional nearest neighbour Ising Model with:
 </p>
 <ul>
   <li><strong>N<sup>2</sup></strong> = total number of sites on the lattice</li>
@@ -179,8 +179,7 @@ We now proceed with the analysis of the behaviour of the different observables a
   </figure>
 </div>
 
-The Ising model is a paradigmatic model of statistical mechanics that allows us to observe some very interesting phenomena like the **phase transition**. In particular, from the plot of the magnetisation m, it is clear how, going through the critical point, the systems changes from a paramagnetic phase (with no magnetisation) to a ferromagnetic phase (in which a spontaneous magnetisation emerges). This effect is one of the simplest examples of 
-the **symmetry breaking**.
+The Ising model is a paradigmatic model of statistical mechanics that allows us to observe some very interesting phenomena like the **phase transition**. In particular, from the plot of the magnetisation m, it is clear how, going through the critical point, the systems changes from a paramagnetic phase (with no magnetisation) to a ferromagnetic phase (in which a spontaneous magnetisation emerges). This effect is one of the simplest examples of the **symmetry breaking**.
 
 <br>
 
@@ -239,7 +238,7 @@ The top row displays the <strong>magnetization per spin</strong> as a function o
   <br>
   <li>
     <strong>For T &lt; T<sub>c</sub> , &beta; = 0.5</strong>:<br>
-    In the low-temperature (ordered) phase, the system becomes trapped in a strongly magnetized state and does not switch to the opposite phase. The histogram has a single sharp peak far from zero. This behavior shows clear <strong>ergodicity breaking</strong>: the system explores only one of the two symmetry-broken minima.
+    In the low temperature (ordered) phase, the system becomes trapped in a strongly magnetized state and does not switch to the opposite phase. The histogram has a single sharp peak far from zero. This behavior shows clear <strong>ergodicity breaking</strong>: the system explores only one of the two symmetry-broken minima.
   </li>
 </ul>
 <br>
@@ -252,7 +251,7 @@ Together, these plots demonstrate how the Ising model transitions from an ergodi
 <ol>
   <li>
     <a href="https://www.thphys.uni-heidelberg.de/~wolschin/statsem21_3s.pdf" target="_blank">
-      One- and two-dimensional Ising model: Statistical Physics Seminar by Prof. Wolschin
+      One and two dimensional Ising model: Statistical Physics Seminar by Prof. Wolschin
     </a>
   </li>
   <li>
