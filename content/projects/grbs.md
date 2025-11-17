@@ -19,7 +19,7 @@ This project was carried out as part of the ARIES Training School in Observation
 
 ## What are Gamma-ray Bursts?
 
-Gamma-ray bursts (GRBs) are among the most energetic transients in the universe. They can last from just a few milliseconds to several minutes and are observed at cosmological distances, with redshifts ranging from as low as 0.008 up to as high as 9.4. Their isotropic luminosities are exceptionally high — spanning from 10^47 to 10^54 erg/s. For comparison, the luminosity of the Sun is about 10^33 erg/s.
+Gamma-ray bursts (GRBs) are among the most energetic transients in the universe. They can last from just a few milliseconds to several minutes and are observed at cosmological distances, with redshifts ranging from as low as 0.008 up to as high as 9.4. Their isotropic luminosities are exceptionally high - spanning from 10^47 to 10^54 erg/s. For comparison, the luminosity of the Sun is about 10^33 erg/s.
 
 <div style="display: flex; justify-content: flex-start; gap: 10px;">
   <figure style="margin: 0;">
@@ -30,7 +30,7 @@ Gamma-ray bursts (GRBs) are among the most energetic transients in the universe.
 
 GRBs emit across a broad range of the electromagnetic spectrum, from radio waves to TeV gamma rays. There are two main types of GRBs: **long** and **short**.
 
-* **Long-duration GRBs** are generally believed to originate from *collapsars* — the core collapse of a massive star at the end of its life.
+* **Long-duration GRBs** are generally believed to originate from *collapsars* - the core collapse of a massive star at the end of its life.
 * **Short-duration GRBs**, on the other hand, are thought to result from the merger of compact objects, such as two neutron stars or a neutron star and a black hole.
 
 <div style="display: flex; justify-content: flex-start; gap: 10px;">
@@ -138,9 +138,9 @@ Spectral lag is observed in two primary forms, each providing insights into the 
 
 * Generated light curves in 3 energy bands:
 
-  * Low: 8–50 keV
-  * Medium: 50–300 keV
-  * High: 300–1000 keV
+  * Low: 8-50 keV
+  * Medium: 50-300 keV
+  * High: 300-1000 keV
 
 ### Cross-Correlation Method
 
@@ -191,9 +191,9 @@ Cross-correlation estimates the time shift needed to best align the two light cu
 **GRB240825A** (T90 = 3.968 ± 0.091 s)
 Energy bands:
 
-* Low: 8–50 keV
-* Medium: 50–300 keV
-* High: 300–1000 keV
+* Low: 8-50 keV
+* Medium: 50-300 keV
+* High: 300-1000 keV
 
 <div style="display: flex; justify-content: flex-start; gap: 10px;">
   <figure style="margin: 0;">
